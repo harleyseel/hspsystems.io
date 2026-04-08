@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Studies — HSP Systems</title>
+<meta name="description" content="Real results from real service businesses. See how HSP Systems transformed operations at Expert Cleaning Services and Wenke Landscaping.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.cases-intro {
+  background:var(--navy); padding:5rem;
+  display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;
+}
+.cases-intro-right {
+  font-size:15px; color:rgba(255,255,255,0.45); line-height:1.9;
+}
+
+/* ─── CASE STUDY BLOCK ─── */
+.case-block { background:var(--cream); padding:6rem 5rem; }
+.case-block + .case-block { background:var(--white); }
+.case-header {
+  display:grid; grid-template-columns:1fr auto; gap:3rem;
+  align-items:end; margin-bottom:3rem;
+  padding-bottom:2rem; border-bottom:1px solid var(--border);
+}
+.case-type {
+  font-size:10px; letter-spacing:0.12em; text-transform:uppercase;
+  color:var(--gold); margin-bottom:0.5rem;
+}
+.case-name {
+  font-family:'Bebas Neue',sans-serif; font-size:clamp(48px,6vw,72px);
+  color:var(--navy); line-height:1;
+}
+.case-url {
+  font-size:13px; color:var(--muted); text-decoration:none;
+}
+.case-url:hover { color:var(--gold); }
+.case-stats-row {
+  display:flex; gap:2px; margin-bottom:3rem;
+}
+.case-stat-card {
+  flex:1; background:var(--navy-dark); padding:2rem;
+  border-left:3px solid var(--gold);
+}
+.case-stat-card-num {
+  font-family:'Bebas Neue',sans-serif; font-size:40px;
+  color:var(--gold-light); line-height:1;
+}
+.case-stat-card-label {
+  font-size:11px; text-transform:uppercase; letter-spacing:0.08em;
+  color:rgba(255,255,255,0.4); margin-top:4px;
+}
+.case-content {
+  display:grid; grid-template-columns:1fr 1fr; gap:4rem;
+}
+.case-story h3 {
+  font-family:'Bebas Neue',sans-serif; font-size:28px;
+  color:var(--navy); margin-bottom:1rem; margin-top:2rem;
+}
+.case-story h3:first-child { margin-top:0; }
+.case-story p {
+  font-size:14px; color:var(--muted); line-height:1.9;
+  margin-bottom:1rem;
+}
+.case-systems-built h4 {
+  font-size:12px; letter-spacing:0.1em; text-transform:uppercase;
+  color:var(--gold); margin-bottom:1rem;
+}
+.case-system-list {
+  list-style:none; display:flex; flex-direction:column;
+}
+.case-system-list li {
+  padding:0.875rem 0;
+  border-bottom:1px solid var(--border);
+  font-size:14px; color:var(--text);
+  display:flex; align-items:center; gap:10px;
+}
+.case-system-list li:first-child { border-top:1px solid var(--border); }
+.case-system-list li::before {
+  content:''; width:5px; height:5px; border-radius:50%;
+  background:var(--gold); flex-shrink:0;
+}
+.case-quote {
+  margin-top:2rem; padding:1.5rem 2rem;
+  border-left:3px solid var(--gold);
+  background:var(--gold-pale);
+}
+.case-quote p {
+  font-family:'DM Serif Display',serif; font-style:italic;
+  font-size:16px; color:var(--navy); line-height:1.7;
+  margin-bottom:0;
+}
+
+@media(max-width:1000px){
+  .cases-intro { grid-template-columns:1fr; padding:3rem 2rem; }
+  .case-block { padding:4rem 2rem; }
+  .case-header { grid-template-columns:1fr; }
+  .case-stats-row { flex-direction:column; }
+  .case-content { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">
+    <div class="nav-logo-mark">HS</div>
+    <div class="nav-brand-text">HSP <span>Systems</span></div>
+  </a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links">
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="cases.html" class="active">Results</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html" class="nav-cta">Apply Now</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-grid"></div>
+  <div class="page-header-inner">
+    <div class="section-eyebrow">Case Studies</div>
+    <h1>Built. Proven.<br><em>Deployed.</em></h1>
+    <p class="page-header-sub">Every system HSP offers was built for real businesses first — not prototyped. These are the builds that became the product.</p>
+  </div>
+</div>
+
+<!-- INTRO STRIP -->
+<div class="cases-intro">
+  <div>
+    <div class="section-eyebrow fade-up">The Difference</div>
+    <h2 class="section-h2 fade-up" style="font-size:clamp(36px,4vw,52px);">We Deploy Before We Sell.</h2>
+  </div>
+  <p class="cases-intro-right fade-up">
+    We deployed the full operational engine at Expert Cleaning Services before we ever sold it to anyone else. Then we proved it transferred at Wenke Landscaping. That's the standard. If it hasn't been stress-tested in a live business, it doesn't get offered to you.
+  </p>
+</div>
+
+<!-- CASE 1: ECS -->
+<section class="case-block">
+  <div class="case-header fade-up">
+    <div>
+      <div class="case-type">House Cleaning · West Michigan</div>
+      <div class="case-name">Expert Cleaning Services</div>
+    </div>
+    <a href="https://calltheexperts.com" target="_blank" class="case-url">calltheexperts.com ↗</a>
+  </div>
+
+  <div class="case-stats-row fade-up">
+    <div class="case-stat-card">
+      <div class="case-stat-card-num">&lt;2 min</div>
+      <div class="case-stat-card-label">Lead response time</div>
+    </div>
+    <div class="case-stat-card">
+      <div class="case-stat-card-num">100%</div>
+      <div class="case-stat-card-label">Hiring fully automated</div>
+    </div>
+    <div class="case-stat-card">
+      <div class="case-stat-card-num">0</div>
+      <div class="case-stat-card-label">Manual HR forms remaining</div>
+    </div>
+    <div class="case-stat-card">
+      <div class="case-stat-card-num">$0</div>
+      <div class="case-stat-card-label">Additional office staff needed</div>
+    </div>
+  </div>
+
+  <div class="case-content">
+    <div class="case-story fade-up">
+      <h3>The Problem</h3>
+      <p>Expert Cleaning Services was a growing residential cleaning company with no operational infrastructure. Leads were falling through the cracks, hiring was manual and inconsistent, and HR processes lived in spreadsheets and text threads. The owner was spending as much time managing systems as running the business.</p>
+
+      <h3>What We Built</h3>
+      <p>We built the entire business engine from scratch — not just a CRM, but the complete operational backbone. The marketing pipeline captures and responds to every lead automatically. The hiring system screens, schedules, and onboards new cleaners without manual intervention. HR workflows handle PTO, reviews, raises, and performance tracking. QuickBooks integration syncs everything financial.</p>
+      <p>This was the build that became HSP Systems. Every module we now offer was first created, tested, and refined here.</p>
+
+      <h3>The Result</h3>
+      <p>Every lead gets a response in under 2 minutes. Hiring is fully automated from application to onboarding. Zero manual HR forms. The owner spends their time growing the business — not fighting fires in the back office.</p>
+    </div>
+
+    <div class="case-systems-built fade-up">
+      <h4>Systems Deployed</h4>
+      <ul class="case-system-list">
+        <li>Full CRM &amp; marketing pipeline</li>
+        <li>Multi-step intake forms with service routing</li>
+        <li>Instant text + email lead acknowledgment</li>
+        <li>Missed-call text-back automation</li>
+        <li>Complete hiring automation pipeline</li>
+        <li>Employee onboarding workflows</li>
+        <li>PTO request &amp; approval system</li>
+        <li>Performance review &amp; raise workflows</li>
+        <li>Review request automation</li>
+        <li>QuickBooks integration &amp; sync</li>
+        <li>Team notifications &amp; internal alerting</li>
+      </ul>
+      <div class="case-quote">
+        <p>This was the blueprint. Everything HSP sells today was built and battle-tested here first.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE 2: WENKE -->
+<section class="case-block">
+  <div class="case-header fade-up">
+    <div>
+      <div class="case-type">Landscaping · West Michigan</div>
+      <div class="case-name">Wenke Landscaping</div>
+    </div>
+    <a href="https://wenkelandscaping.com" target="_blank" class="case-url">wenkelandscaping.com ↗</a>
+  </div>
+
+  <div class="case-stats-row fade-up">
+    <div class="case-stat-card">
+      <div class="case-stat-card-num">4</div>
+      <div class="case-stat-card-label">Service lines routed</div>
+    </div>
+    <div class="case-stat-card">
+      <div class="case-stat-card-num">Auto</div>
+      <div class="case-stat-card-label">All lead follow-up</div>
+    </div>
+    <div class="case-stat-card">
+      <div class="case-stat-card-num">Full</div>
+      <div class="case-stat-card-label">Hiring pipeline deployed</div>
+    </div>
+    <div class="case-stat-card">
+      <div class="case-stat-card-num">IVR</div>
+      <div class="case-stat-card-label">Phone routing live</div>
+    </div>
+  </div>
+
+  <div class="case-content">
+    <div class="case-story fade-up">
+      <h3>The Problem</h3>
+      <p>Wenke Landscaping offers four distinct service lines — lawn maintenance, landscape design, hardscaping, and snow removal. Each service needed its own intake process, routing logic, and follow-up sequence. Leads were getting misrouted or lost entirely, and the company had no system for hiring seasonal crews at scale.</p>
+
+      <h3>What We Built</h3>
+      <p>We built a full CRM with service-specific lead routing. Each service line has its own intake form, pipeline stage logic, and automated follow-up. Phone routing directs callers to the right department. The hiring pipeline handles seasonal recruitment from application to interview scheduling to onboarding handoff.</p>
+      <p>This was the proof that the HSP model works beyond one industry. Same principles, different business — same results.</p>
+
+      <h3>The Result</h3>
+      <p>Every lead is automatically routed to the correct service team. Follow-up is instant and automated across all four lines. Hiring runs itself during peak season. The office team focuses on estimates and customer relationships instead of chasing leads and sorting applications.</p>
+    </div>
+
+    <div class="case-systems-built fade-up">
+      <h4>Systems Deployed</h4>
+      <ul class="case-system-list">
+        <li>4-service-line lead routing system</li>
+        <li>Service-specific multi-step intake forms</li>
+        <li>Automated follow-up per service type</li>
+        <li>Full hiring pipeline with seasonal scaling</li>
+        <li>Phone routing / IVR system</li>
+        <li>Booking &amp; calendar integration</li>
+        <li>Instant text + email acknowledgment</li>
+        <li>Missed-call text-back automation</li>
+        <li>Team notifications &amp; assignment routing</li>
+      </ul>
+      <div class="case-quote">
+        <p>Four service lines, one system. Proof the HSP model transfers across industries.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band">
+  <div>
+    <h2>Want Results Like These?</h2>
+    <p>Apply for a demo and we'll show you exactly what your system would look like — scoped to your business, your services, and your team.</p>
+  </div>
+  <a href="contact.html" class="btn-navy">Apply Now ↗</a>
+</div>
+
+<footer>
+  <div class="footer-brand">
+    <div class="footer-name">HSP <span>Systems</span></div>
+    <div class="footer-tagline">Lead response systems for service businesses</div>
+  </div>
+  <div class="footer-links">
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="cases.html">Results</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Apply</a>
+  </div>
+  <div class="footer-copy">© 2025 HSP Systems · Grand Haven, MI</div>
+</footer>
+
+<script>
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:0.08});
+document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

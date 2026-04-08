@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — HSP Systems</title>
+<meta name="description" content="HSP Systems was built inside real service businesses before it was ever sold. Founded by an industrial engineer in West Michigan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* ─── ABOUT PAGE ─── */
+.about-story {
+  background:var(--cream); padding:6rem 5rem;
+  display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start;
+}
+.about-story-text h3 {
+  font-family:'Bebas Neue',sans-serif; font-size:36px;
+  color:var(--navy); line-height:1.1; margin-bottom:1.5rem;
+}
+.about-story-text p {
+  font-size:15px; color:var(--muted); line-height:1.9;
+  margin-bottom:1.25rem;
+}
+.about-story-text p strong { color:var(--text); }
+.about-sidebar {
+  background:var(--navy); padding:2.5rem;
+}
+.about-sidebar-label {
+  font-size:10px; letter-spacing:0.15em; text-transform:uppercase;
+  color:var(--gold); margin-bottom:1.5rem;
+}
+.about-fact {
+  padding:1.25rem 0;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.about-fact:last-child { border-bottom:none; }
+.about-fact-num {
+  font-family:'Bebas Neue',sans-serif; font-size:32px;
+  color:var(--white); line-height:1;
+}
+.about-fact-label {
+  font-size:12px; color:rgba(255,255,255,0.4); margin-top:4px; line-height:1.5;
+}
+
+/* ─── VALUES ─── */
+.values {
+  background:var(--navy-dark); padding:6rem 5rem;
+}
+.values-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:2px;
+  margin-top:3rem;
+}
+.value-card {
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.07);
+  padding:2.5rem;
+  transition:background 0.2s;
+}
+.value-card:hover { background:rgba(255,255,255,0.06); }
+.value-num {
+  font-family:'Bebas Neue',sans-serif; font-size:48px;
+  color:rgba(255,255,255,0.08); line-height:1; margin-bottom:1rem;
+}
+.value-title {
+  font-size:15px; font-weight:500; color:var(--white); margin-bottom:0.5rem;
+}
+.value-desc {
+  font-size:13px; color:rgba(255,255,255,0.4); line-height:1.7;
+}
+
+/* ─── ORIGIN ─── */
+.origin {
+  background:var(--cream); padding:6rem 5rem;
+}
+.origin-timeline {
+  margin-top:3rem;
+  display:flex; flex-direction:column; gap:0;
+}
+.timeline-item {
+  display:grid; grid-template-columns:120px 1fr;
+  border-bottom:1px solid var(--border);
+  padding:1.75rem 0;
+}
+.timeline-item:first-child { border-top:1px solid var(--border); }
+.timeline-year {
+  font-family:'Bebas Neue',sans-serif; font-size:28px;
+  color:var(--gold);
+}
+.timeline-text { font-size:14px; color:var(--muted); line-height:1.8; }
+.timeline-text strong { color:var(--navy); }
+
+@media(max-width:1000px){
+  .about-story { grid-template-columns:1fr; padding:4rem 2rem; }
+  .values { padding:4rem 2rem; }
+  .values-grid { grid-template-columns:1fr; }
+  .origin { padding:4rem 2rem; }
+  .timeline-item { grid-template-columns:80px 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">
+    <div class="nav-logo-mark">HS</div>
+    <div class="nav-brand-text">HSP <span>Systems</span></div>
+  </a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links">
+    <a href="services.html">Services</a>
+    <a href="about.html" class="active">About</a>
+    <a href="cases.html">Results</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html" class="nav-cta">Apply Now</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<div class="page-header">
+  <div class="page-header-grid"></div>
+  <div class="page-header-inner">
+    <div class="section-eyebrow">About HSP</div>
+    <h1>Built Inside<br><em>Real Businesses.</em></h1>
+    <p class="page-header-sub">HSP Systems wasn't prototyped in a lab. It was built from the ground up inside operating service companies — then packaged for businesses like yours.</p>
+  </div>
+</div>
+
+<!-- STORY -->
+<section class="about-story">
+  <div class="about-story-text fade-up">
+    <h3>The Origin Story</h3>
+    <p>HSP Systems started at <strong>Expert Cleaning Services</strong> — a residential cleaning company in West Michigan. The founder of HSP was brought in to build the entire operational backbone: lead capture, hiring automation, HR workflows, review systems, and QuickBooks integration.</p>
+    <p>What started as one company's operations project turned into a repeatable system. When <strong>Wenke Landscaping</strong> needed the same infrastructure across four service lines, the model proved it could transfer across industries.</p>
+    <p>That's when HSP Systems became a product — not just a project. Every system we sell has been deployed, tested, and refined in real businesses before you ever see it.</p>
+    <h3 style="margin-top:2.5rem;">The Founder</h3>
+    <p>HSP is founded by an <strong>industrial engineer</strong> who thinks in systems, processes, and measurable outcomes. Not marketing buzzwords. Not software hype. The goal is always the same: build infrastructure that removes bottlenecks and runs without you.</p>
+    <p>We're based in <strong>Grand Haven, Michigan</strong> and work primarily with service businesses across West Michigan — though the systems we build work anywhere.</p>
+  </div>
+  <div class="about-sidebar fade-up">
+    <div class="about-sidebar-label">HSP at a glance</div>
+    <div class="about-fact">
+      <div class="about-fact-num">2</div>
+      <div class="about-fact-label">Full operational builds completed before launching HSP</div>
+    </div>
+    <div class="about-fact">
+      <div class="about-fact-num">&lt;2 min</div>
+      <div class="about-fact-label">Average lead response time across all client systems</div>
+    </div>
+    <div class="about-fact">
+      <div class="about-fact-num">14 days</div>
+      <div class="about-fact-label">Average build-to-launch timeline</div>
+    </div>
+    <div class="about-fact">
+      <div class="about-fact-num">IE</div>
+      <div class="about-fact-label">Industrial Engineering foundation — systems thinking, not guesswork</div>
+    </div>
+    <div class="about-fact">
+      <div class="about-fact-num">0</div>
+      <div class="about-fact-label">Generic templates used — everything is built to your business</div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values">
+  <div class="section-eyebrow fade-up">How We Work</div>
+  <h2 class="section-h2 fade-up">Principles, Not Pitches.</h2>
+  <div class="values-grid">
+    <div class="value-card fade-up">
+      <div class="value-num">01</div>
+      <div class="value-title">Build it in production first</div>
+      <div class="value-desc">We don't sell anything we haven't already deployed and stress-tested in a live business. If it didn't work for Expert Cleaning or Wenke, it doesn't get sold to you.</div>
+    </div>
+    <div class="value-card fade-up">
+      <div class="value-num">02</div>
+      <div class="value-title">Systems over software</div>
+      <div class="value-desc">Software is just the tool. The value is in the system design — the logic, the routing, the automations, and how they all connect to move a lead from form submission to booked job.</div>
+    </div>
+    <div class="value-card fade-up">
+      <div class="value-num">03</div>
+      <div class="value-title">Outcomes, not outputs</div>
+      <div class="value-desc">We don't measure success by how many workflows we build. We measure it by whether your leads are getting followed up on, your pipeline is moving, and your phone is ringing with booked estimates.</div>
+    </div>
+    <div class="value-card fade-up">
+      <div class="value-num">04</div>
+      <div class="value-title">Modular by design</div>
+      <div class="value-desc">You shouldn't have to buy everything at once. Start with what solves your biggest pain — lead response — and add hiring, IVR, or reactivation when the business is ready.</div>
+    </div>
+    <div class="value-card fade-up">
+      <div class="value-num">05</div>
+      <div class="value-title">Transparent pricing</div>
+      <div class="value-desc">Fixed setup fees. Clear monthly costs. No surprise invoices. No scope creep charges. You know what you're paying before we start.</div>
+    </div>
+    <div class="value-card fade-up">
+      <div class="value-num">06</div>
+      <div class="value-desc">Say no more than yes</div>
+      <div class="value-desc">We only take on businesses we can genuinely help. If your problem doesn't match what we build, we'll tell you — and point you somewhere better.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="origin">
+  <div class="section-eyebrow fade-up">Timeline</div>
+  <h2 class="section-h2 section-h2-dark fade-up">How We Got Here</h2>
+  <div class="origin-timeline">
+    <div class="timeline-item fade-up">
+      <div class="timeline-year">2023</div>
+      <div class="timeline-text"><strong>Expert Cleaning Services.</strong> Full operational build — CRM, lead pipeline, hiring automation, HR workflows, review system, QuickBooks sync. The entire business engine, built from scratch.</div>
+    </div>
+    <div class="timeline-item fade-up">
+      <div class="timeline-year">2024</div>
+      <div class="timeline-text"><strong>Wenke Landscaping.</strong> Four-service-line deployment — separate routing, intake forms, hiring pipeline, phone routing, and booking. Proved the system transfers across industries.</div>
+    </div>
+    <div class="timeline-item fade-up">
+      <div class="timeline-year">2025</div>
+      <div class="timeline-text"><strong>HSP Systems launches.</strong> The operational engine becomes a product. Modular lead response systems, built for estimate-based service businesses across West Michigan and beyond.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band">
+  <div>
+    <h2>Want the Same System?</h2>
+    <p>Apply for a demo and we'll show you what HSP looks like for your specific business. No generic pitch — we review your setup before the call.</p>
+  </div>
+  <a href="contact.html" class="btn-navy">Apply Now ↗</a>
+</div>
+
+<footer>
+  <div class="footer-brand">
+    <div class="footer-name">HSP <span>Systems</span></div>
+    <div class="footer-tagline">Lead response systems for service businesses</div>
+  </div>
+  <div class="footer-links">
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="cases.html">Results</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Apply</a>
+  </div>
+  <div class="footer-copy">© 2025 HSP Systems · Grand Haven, MI</div>
+</footer>
+
+<script>
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:0.08});
+document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

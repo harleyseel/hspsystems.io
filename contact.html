@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply — HSP Systems</title>
+<meta name="description" content="Apply for an HSP Systems demo. We review your current setup before the call — no generic pitch.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.contact-section {
+  background:var(--navy-dark); padding:0 5rem 6rem;
+}
+.contact-grid {
+  display:grid; grid-template-columns:1fr 400px; gap:5rem;
+  align-items:start;
+}
+.contact-form { display:flex; flex-direction:column; gap:12px; }
+.contact-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+
+/* Sidebar */
+.contact-sidebar { display:flex; flex-direction:column; gap:2px; }
+.sidebar-card {
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.07);
+  padding:1.75rem;
+}
+.sidebar-card-title {
+  font-size:13px; font-weight:500; color:var(--white); margin-bottom:6px;
+}
+.sidebar-card-desc {
+  font-size:13px; color:rgba(255,255,255,0.4); line-height:1.7;
+}
+.sidebar-card-highlight {
+  background:rgba(200,145,42,0.08);
+  border:1px solid rgba(200,145,42,0.2);
+}
+.sidebar-card-highlight .sidebar-card-title { color:var(--gold); }
+
+/* FAQ */
+.faq-section { background:var(--cream); padding:6rem 5rem; }
+.faq-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:0 4rem;
+  margin-top:3rem;
+}
+.faq-item {
+  padding:1.75rem 0;
+  border-bottom:1px solid var(--border);
+}
+.faq-item:nth-child(1),
+.faq-item:nth-child(2) { border-top:1px solid var(--border); }
+.faq-q {
+  font-size:15px; font-weight:500; color:var(--navy); margin-bottom:8px;
+}
+.faq-a {
+  font-size:13px; color:var(--muted); line-height:1.8;
+}
+
+@media(max-width:1000px){
+  .contact-section { padding:0 2rem 4rem; }
+  .contact-grid { grid-template-columns:1fr; gap:3rem; }
+  .contact-row { grid-template-columns:1fr; }
+  .faq-section { padding:4rem 2rem; }
+  .faq-grid { grid-template-columns:1fr; }
+  .faq-item:nth-child(2) { border-top:none; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">
+    <div class="nav-logo-mark">HS</div>
+    <div class="nav-brand-text">HSP <span>Systems</span></div>
+  </a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links">
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="cases.html">Results</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html" class="nav-cta active">Apply Now</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-grid"></div>
+  <div class="page-header-inner">
+    <div class="section-eyebrow">Apply</div>
+    <h1>Tell Us About<br><em>Your Business.</em></h1>
+    <p class="page-header-sub">We only take on businesses we can genuinely help. Fill this out and we'll review your current setup before getting on a call.</p>
+  </div>
+</div>
+
+<section class="contact-section">
+  <div class="contact-grid">
+    <div class="contact-form fade-up">
+      <div class="contact-row">
+        <div>
+          <label class="form-label">First Name</label>
+          <input type="text" placeholder="John" class="form-input">
+        </div>
+        <div>
+          <label class="form-label">Last Name</label>
+          <input type="text" placeholder="Smith" class="form-input">
+        </div>
+      </div>
+      <div>
+        <label class="form-label">Email</label>
+        <input type="email" placeholder="john@yourcompany.com" class="form-input">
+      </div>
+      <div>
+        <label class="form-label">Phone</label>
+        <input type="tel" placeholder="(616) 555-0123" class="form-input">
+      </div>
+      <div>
+        <label class="form-label">Business Name</label>
+        <input type="text" placeholder="Your company" class="form-input">
+      </div>
+      <div>
+        <label class="form-label">Industry</label>
+        <select class="form-input">
+          <option value="" disabled selected>Select your industry</option>
+          <option>Landscaping / Lawn Care</option>
+          <option>House Cleaning</option>
+          <option>Painting</option>
+          <option>Roofing</option>
+          <option>Tree Service</option>
+          <option>Pressure Washing</option>
+          <option>Remodeling / Construction</option>
+          <option>HVAC / Plumbing / Electrical</option>
+          <option>Junk Removal</option>
+          <option>Other Home Service</option>
+        </select>
+      </div>
+      <div>
+        <label class="form-label">Website</label>
+        <input type="text" placeholder="yourcompany.com" class="form-input">
+      </div>
+      <div>
+        <label class="form-label">How many leads do you get per month? (estimate)</label>
+        <select class="form-input">
+          <option value="" disabled selected>Select range</option>
+          <option>Under 20</option>
+          <option>20–50</option>
+          <option>50–100</option>
+          <option>100+</option>
+          <option>Not sure</option>
+        </select>
+      </div>
+      <div>
+        <label class="form-label">What's your biggest problem right now?</label>
+        <textarea rows="4" placeholder="Missed calls, slow follow-up, no system for tracking leads..." class="form-input"></textarea>
+      </div>
+      <button type="button" class="btn-gold" style="width:100%;text-align:center;padding:18px;">Submit Application</button>
+      <p style="font-size:11px;color:rgba(255,255,255,0.2);text-align:center;margin-top:4px;">We respond to every application within 24 hours.</p>
+    </div>
+
+    <div class="contact-sidebar fade-up">
+      <div class="sidebar-card sidebar-card-highlight">
+        <div class="sidebar-card-title">What happens after you apply?</div>
+        <div class="sidebar-card-desc">We review your website and current lead flow before getting on a call. When we talk, we already know your setup — no generic pitch, no wasted time.</div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Who is this for?</div>
+        <div class="sidebar-card-desc">Estimate-based service businesses — landscaping, cleaning, painting, roofing, HVAC, and similar trades — doing at least 20+ leads/month who want a system, not a band-aid.</div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Who is this NOT for?</div>
+        <div class="sidebar-card-desc">Businesses looking for paid ads, SEO, social media management, or website redesigns. We build operational infrastructure — not marketing campaigns.</div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">How fast can we start?</div>
+        <div class="sidebar-card-desc">Most builds launch within 14 days of kickoff. If you apply today, we can typically start within the week.</div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Based in</div>
+        <div class="sidebar-card-desc">Grand Haven, Michigan. We work primarily with West Michigan service businesses, but the systems we build work anywhere.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="section-eyebrow fade-up">FAQ</div>
+  <h2 class="section-h2 section-h2-dark fade-up">Common Questions</h2>
+  <div class="faq-grid">
+    <div class="faq-item fade-up">
+      <div class="faq-q">Do I need to change my website?</div>
+      <div class="faq-a">No. We embed forms directly on your existing site. If you'd prefer, we can also build a standalone landing page — but a full website redesign is not required or included.</div>
+    </div>
+    <div class="faq-item fade-up">
+      <div class="faq-q">What platform does this run on?</div>
+      <div class="faq-a">HSP systems run on a managed white-label platform (built on GoHighLevel). You get your own sub-account, your own login, and full access to your data — we manage the infrastructure.</div>
+    </div>
+    <div class="faq-item fade-up">
+      <div class="faq-q">What's the $397/mo cover?</div>
+      <div class="faq-a">Platform access — your CRM, pipeline, automations, forms, phone number, text messaging, and email sending. It keeps everything running. Think of it as your operational infrastructure subscription.</div>
+    </div>
+    <div class="faq-item fade-up">
+      <div class="faq-q">Do I need a retainer?</div>
+      <div class="faq-a">No. Retainers are optional. The system is built to run on its own. Retainers are for businesses that want ongoing optimization, new workflow builds, or a dedicated support contact.</div>
+    </div>
+    <div class="faq-item fade-up">
+      <div class="faq-q">Can I add modules later?</div>
+      <div class="faq-a">Yes — that's the whole point. Start with the Lead Response System. Add Reviews, IVR, Hiring, Quoting, or Internal Ops whenever your business is ready.</div>
+    </div>
+    <div class="faq-item fade-up">
+      <div class="faq-q">What if I already have a CRM?</div>
+      <div class="faq-a">We can discuss migration or integration. In most cases, businesses that come to us have a CRM that isn't set up properly — or one that's just a contact list with no automation behind it. We replace the chaos with a real system.</div>
+    </div>
+    <div class="faq-item fade-up">
+      <div class="faq-q">Do you do marketing / ads / SEO?</div>
+      <div class="faq-a">No. We build operational infrastructure — the system that handles leads after they come in. If you need more leads, we can recommend partners. Our job is making sure you never waste the leads you already get.</div>
+    </div>
+    <div class="faq-item fade-up">
+      <div class="faq-q">What if it doesn't work for my business?</div>
+      <div class="faq-a">That's why we review your setup before the call. If we don't think we can help, we'll tell you. We only take on businesses where the system makes sense.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">
+    <div class="footer-name">HSP <span>Systems</span></div>
+    <div class="footer-tagline">Lead response systems for service businesses</div>
+  </div>
+  <div class="footer-links">
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="cases.html">Results</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Apply</a>
+  </div>
+  <div class="footer-copy">© 2025 HSP Systems · Grand Haven, MI</div>
+</footer>
+
+<script>
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:0.08});
+document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — HSP Systems</title>
+<meta name="description" content="HSP builds lead response systems, hiring pipelines, phone routing, review automation, and internal ops for home service businesses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* ─── CORE OFFER ─── */
+.core-offer { background:var(--cream); padding:6rem 5rem; }
+.core-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:4rem;
+  margin-top:3rem; align-items:start;
+}
+.core-box {
+  background:var(--navy-dark); border:2px solid var(--gold); padding:3rem;
+}
+.core-badge {
+  font-size:10px; letter-spacing:0.15em; text-transform:uppercase;
+  background:var(--gold); color:var(--navy-dark);
+  padding:4px 12px; display:inline-block; margin-bottom:1.5rem;
+}
+.core-name {
+  font-family:'Bebas Neue',sans-serif; font-size:40px;
+  color:var(--white); line-height:1; margin-bottom:0.5rem;
+}
+.core-pricing { margin:1.5rem 0; display:flex; align-items:baseline; gap:8px; }
+.core-price-big {
+  font-family:'Bebas Neue',sans-serif; font-size:52px;
+  color:var(--gold-light); line-height:1;
+}
+.core-price-detail { font-size:13px; color:rgba(255,255,255,0.4); line-height:1.5; }
+.core-divider { border:none; border-top:1px solid rgba(255,255,255,0.08); margin:1.5rem 0; }
+.core-includes { list-style:none; display:flex; flex-direction:column; }
+.core-includes li {
+  padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.06);
+  font-size:13px; color:rgba(255,255,255,0.6);
+  display:flex; align-items:center; gap:10px;
+}
+.core-includes li:last-child { border-bottom:none; }
+.core-includes li::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0; }
+.core-not {
+  margin-top:1.5rem; padding:1rem 1.25rem;
+  background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06);
+  font-size:12px; color:rgba(255,255,255,0.25); line-height:1.7;
+}
+.core-detail h3 {
+  font-family:'Bebas Neue',sans-serif; font-size:28px;
+  color:var(--navy); margin-bottom:1rem;
+}
+.core-detail p {
+  font-size:14px; color:var(--muted); line-height:1.8; margin-bottom:1.25rem;
+}
+.core-detail-list {
+  list-style:none; display:flex; flex-direction:column; gap:0;
+}
+.core-detail-list li {
+  padding:0.875rem 0;
+  border-bottom:1px solid var(--border);
+  font-size:14px; color:var(--text);
+  display:flex; align-items:flex-start; gap:10px;
+}
+.core-detail-list li:first-child { border-top:1px solid var(--border); }
+.core-detail-list li::before {
+  content:'→'; color:var(--gold); font-weight:500; flex-shrink:0; margin-top:1px;
+}
+
+/* ─── MODULES ─── */
+.modules { background:var(--navy-dark); padding:6rem 5rem; }
+.module-grid { display:flex; flex-direction:column; gap:2px; margin-top:3rem; }
+.module-row {
+  display:grid; grid-template-columns:280px 1fr auto;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.07);
+  transition:background 0.2s;
+}
+.module-row:hover { background:rgba(255,255,255,0.06); }
+.module-row-left {
+  padding:2.5rem;
+  border-right:1px solid rgba(255,255,255,0.07);
+  display:flex; flex-direction:column; gap:6px;
+  background:rgba(255,255,255,0.02);
+}
+.module-row-name {
+  font-family:'Bebas Neue',sans-serif; font-size:28px;
+  color:var(--white); line-height:1.1;
+}
+.module-row-price {
+  font-family:'Bebas Neue',sans-serif; font-size:22px;
+  color:var(--gold);
+}
+.module-row-price-sub { font-size:10px; color:rgba(255,255,255,0.35); }
+.module-row-mid { padding:2.5rem; }
+.module-row-desc {
+  font-size:14px; color:rgba(255,255,255,0.5); line-height:1.8;
+  margin-bottom:1.25rem;
+}
+.module-row-features {
+  display:flex; flex-wrap:wrap; gap:6px;
+}
+.mod-tag {
+  font-size:11px; color:rgba(255,255,255,0.45);
+  border:1px solid rgba(255,255,255,0.1);
+  padding:4px 10px;
+}
+.module-row-right {
+  padding:2.5rem;
+  border-left:1px solid rgba(255,255,255,0.07);
+  display:flex; align-items:center; min-width:160px;
+}
+
+/* ─── RETAINERS ─── */
+.retainers { background:var(--cream); padding:6rem 5rem; }
+.retainer-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:2px;
+  margin-top:3rem;
+}
+.retainer-card {
+  background:var(--white); border:1px solid var(--border);
+  padding:2.5rem; transition:border-color 0.2s;
+}
+.retainer-card:hover { border-color:var(--gold); }
+.retainer-card.featured {
+  border:2px solid var(--gold);
+  background:var(--navy-dark);
+}
+.retainer-card.featured .retainer-name,
+.retainer-card.featured .retainer-price { color:var(--white); }
+.retainer-card.featured .retainer-desc,
+.retainer-card.featured .retainer-includes li { color:rgba(255,255,255,0.5); }
+.retainer-card.featured .retainer-includes li { border-color:rgba(255,255,255,0.08); }
+.retainer-tag {
+  font-size:10px; letter-spacing:0.12em; text-transform:uppercase;
+  color:var(--gold); margin-bottom:1rem; display:block;
+}
+.retainer-name {
+  font-family:'Bebas Neue',sans-serif; font-size:32px;
+  color:var(--navy); line-height:1; margin-bottom:0.25rem;
+}
+.retainer-price {
+  font-family:'Bebas Neue',sans-serif; font-size:24px;
+  color:var(--gold); margin-bottom:1rem;
+}
+.retainer-desc { font-size:13px; color:var(--muted); line-height:1.7; margin-bottom:1.25rem; }
+.retainer-includes { list-style:none; display:flex; flex-direction:column; }
+.retainer-includes li {
+  padding:8px 0; border-bottom:1px solid var(--border);
+  font-size:13px; color:var(--muted);
+  display:flex; align-items:center; gap:8px;
+}
+.retainer-includes li:last-child { border-bottom:none; }
+.retainer-includes li::before { content:''; width:4px; height:4px; border-radius:50%; background:var(--gold); flex-shrink:0; }
+
+/* ─── PROCESS ─── */
+.process { background:var(--navy); padding:6rem 5rem; }
+.process-steps { display:flex; flex-direction:column; gap:2px; margin-top:3rem; }
+.p-step {
+  display:grid; grid-template-columns:80px 1fr;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.07);
+}
+.p-step-num {
+  background:rgba(255,255,255,0.05);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Bebas Neue',sans-serif; font-size:36px;
+  color:rgba(255,255,255,0.15); border-right:1px solid rgba(255,255,255,0.07);
+}
+.p-step-body { padding:1.75rem 2.5rem; }
+.p-step-title { font-size:15px; font-weight:500; color:var(--white); margin-bottom:6px; }
+.p-step-desc { font-size:13px; color:rgba(255,255,255,0.4); line-height:1.7; }
+.p-step-tag {
+  display:inline-block; margin-top:10px;
+  font-size:10px; letter-spacing:0.1em; text-transform:uppercase;
+  color:var(--gold); background:rgba(200,145,42,0.12); padding:3px 8px;
+}
+
+@media(max-width:1000px){
+  .core-offer, .modules, .retainers, .process { padding:4rem 2rem; }
+  .core-grid { grid-template-columns:1fr; }
+  .module-row { grid-template-columns:1fr; }
+  .module-row-left { border-right:none; border-bottom:1px solid rgba(255,255,255,0.07); }
+  .module-row-right { border-left:none; border-top:1px solid rgba(255,255,255,0.07); }
+  .retainer-grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">
+    <div class="nav-logo-mark">HS</div>
+    <div class="nav-brand-text">HSP <span>Systems</span></div>
+  </a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links">
+    <a href="services.html" class="active">Services</a>
+    <a href="about.html">About</a>
+    <a href="cases.html">Results</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html" class="nav-cta">Apply Now</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-grid"></div>
+  <div class="page-header-inner">
+    <div class="section-eyebrow">Services</div>
+    <h1>What We <em>Build.</em></h1>
+    <p class="page-header-sub">One core system. Five add-on modules. Optional retainers. Everything priced upfront — no surprises, no scope creep.</p>
+  </div>
+</div>
+
+<!-- CORE OFFER -->
+<section class="core-offer">
+  <div class="section-eyebrow fade-up">Core System</div>
+  <h2 class="section-h2 section-h2-dark fade-up">The Lead Response System</h2>
+  <div class="core-grid">
+    <div class="core-box fade-up">
+      <span class="core-badge">Default Quote</span>
+      <div class="core-name">Lead Response System</div>
+      <div class="core-pricing">
+        <div class="core-price-big">$1,500</div>
+        <div class="core-price-detail">one-time setup<br>+ $397/mo platform access</div>
+      </div>
+      <hr class="core-divider">
+      <ul class="core-includes">
+        <li>1 location / sub-account on HSP managed platform</li>
+        <li>1 core opportunities pipeline</li>
+        <li>Main intake form + up to 4 service-specific second-step forms</li>
+        <li>Instant text + email acknowledgment on every submission</li>
+        <li>Missed-call text-back automation</li>
+        <li>Tags, assignments, owner &amp; team notifications</li>
+        <li>1 follow-up workflow sequence</li>
+        <li>1 review request workflow</li>
+        <li>Form embed on your existing site or 1 landing page</li>
+        <li>Launch testing + onboarding walkthrough</li>
+      </ul>
+      <div class="core-not">
+        Not included: custom website rebuilds · paid ads · SEO · IVR / phone trees · hiring pipeline · custom API integrations · unlimited revisions
+      </div>
+      <div style="margin-top:2rem;">
+        <a href="contact.html" class="btn-gold" style="width:100%;text-align:center;">Apply for This System</a>
+      </div>
+    </div>
+    <div class="core-detail fade-up">
+      <h3>What this actually solves</h3>
+      <p>Most service businesses lose leads because nobody responds fast enough. You're on a job site, your phone rings, nobody picks up, and the prospect calls your competitor. Or they fill out a form on your website and hear nothing for 3 days.</p>
+      <p>The Lead Response System eliminates this entirely. Every form submission triggers an instant text and email. Every missed call gets an automatic text-back. Every lead enters your pipeline with the right tags, assignments, and notifications so your team knows exactly what to do next.</p>
+      <h3 style="margin-top:2rem;">What's included — in detail</h3>
+      <ul class="core-detail-list">
+        <li>Multi-step intake forms that qualify leads before they hit your pipeline — service type, property details, timeline, photos</li>
+        <li>Instant acknowledgment via text and email the moment a form is submitted — under 2 minutes, every time</li>
+        <li>Missed-call text-back that sends a pre-written SMS if you can't answer the phone</li>
+        <li>CRM pipeline with stages mapped to your sales process — new lead, contacted, estimate scheduled, quote sent, won/lost</li>
+        <li>Automated follow-up sequence that nudges leads who haven't responded</li>
+        <li>Review request workflow triggered after a job is marked complete</li>
+        <li>Team notifications and routing so the right person sees the right lead immediately</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ADD-ON MODULES -->
+<section class="modules">
+  <div class="section-eyebrow fade-up">Add-On Modules</div>
+  <h2 class="section-h2 fade-up">Expand When You're Ready.</h2>
+  <p class="section-sub fade-up">Each module is a one-time build. No recurring fees beyond your platform access. Add them as your business grows.</p>
+
+  <div class="module-grid">
+    <div class="module-row fade-up">
+      <div class="module-row-left">
+        <div class="module-row-name">Reviews + Reactivation</div>
+        <div class="module-row-price">$1,500</div>
+        <div class="module-row-price-sub">one-time build</div>
+      </div>
+      <div class="module-row-mid">
+        <p class="module-row-desc">Automate your review collection and reactivate past customers who haven't booked in 3–6+ months. Reviews go to Google; complaints route to you privately first so you can resolve before they go public.</p>
+        <div class="module-row-features">
+          <span class="mod-tag">Post-job review request</span>
+          <span class="mod-tag">Private feedback routing</span>
+          <span class="mod-tag">Google review link</span>
+          <span class="mod-tag">Past-customer reactivation</span>
+          <span class="mod-tag">Win-back sequences</span>
+        </div>
+      </div>
+      <div class="module-row-right">
+        <a href="contact.html" class="btn-ghost">Inquire →</a>
+      </div>
+    </div>
+
+    <div class="module-row fade-up">
+      <div class="module-row-left">
+        <div class="module-row-name">Phone Routing / IVR</div>
+        <div class="module-row-price">$2,000</div>
+        <div class="module-row-price-sub">one-time build</div>
+      </div>
+      <div class="module-row-mid">
+        <p class="module-row-desc">Intelligent call routing with after-hours logic, voicemail-to-text, and internal alerting. Callers reach the right person or get a professional voicemail path — never a dead end.</p>
+        <div class="module-row-features">
+          <span class="mod-tag">Call routing by service</span>
+          <span class="mod-tag">After-hours logic</span>
+          <span class="mod-tag">Voicemail paths</span>
+          <span class="mod-tag">Voicemail-to-text</span>
+          <span class="mod-tag">Internal team alerts</span>
+        </div>
+      </div>
+      <div class="module-row-right">
+        <a href="contact.html" class="btn-ghost">Inquire →</a>
+      </div>
+    </div>
+
+    <div class="module-row fade-up">
+      <div class="module-row-left">
+        <div class="module-row-name">Quoting + Intake</div>
+        <div class="module-row-price">$2,500</div>
+        <div class="module-row-price-sub">one-time build</div>
+      </div>
+      <div class="module-row-mid">
+        <p class="module-row-desc">Deeper intake logic for complex quoting processes. Automated quote follow-up, estimate reminders, and pipeline stage automation so quotes don't sit unanswered.</p>
+        <div class="module-row-features">
+          <span class="mod-tag">Advanced intake forms</span>
+          <span class="mod-tag">Quote follow-up sequences</span>
+          <span class="mod-tag">Estimate reminders</span>
+          <span class="mod-tag">Stage movement triggers</span>
+          <span class="mod-tag">Conditional logic</span>
+        </div>
+      </div>
+      <div class="module-row-right">
+        <a href="contact.html" class="btn-ghost">Inquire →</a>
+      </div>
+    </div>
+
+    <div class="module-row fade-up">
+      <div class="module-row-left">
+        <div class="module-row-name">Hiring Pipeline</div>
+        <div class="module-row-price">$3,500</div>
+        <div class="module-row-price-sub">one-time build</div>
+      </div>
+      <div class="module-row-mid">
+        <p class="module-row-desc">Full applicant tracking — from application to interview to onboarding handoff. Automated scheduling, scoring, and team notifications so hiring doesn't eat your day.</p>
+        <div class="module-row-features">
+          <span class="mod-tag">Application intake form</span>
+          <span class="mod-tag">Auto-screening</span>
+          <span class="mod-tag">Interview scheduling</span>
+          <span class="mod-tag">Team notifications</span>
+          <span class="mod-tag">Onboarding handoff</span>
+        </div>
+      </div>
+      <div class="module-row-right">
+        <a href="contact.html" class="btn-ghost">Inquire →</a>
+      </div>
+    </div>
+
+    <div class="module-row fade-up">
+      <div class="module-row-left">
+        <div class="module-row-name">Internal Ops</div>
+        <div class="module-row-price">$1,500</div>
+        <div class="module-row-price-sub">one-time build</div>
+      </div>
+      <div class="module-row-mid">
+        <p class="module-row-desc">Internal workflows for operational management — PTO requests, approval routing, team handoffs, and automated alerts that keep your back office running without spreadsheets.</p>
+        <div class="module-row-features">
+          <span class="mod-tag">PTO requests</span>
+          <span class="mod-tag">Approval workflows</span>
+          <span class="mod-tag">Team handoffs</span>
+          <span class="mod-tag">Operational alerts</span>
+          <span class="mod-tag">Internal forms</span>
+        </div>
+      </div>
+      <div class="module-row-right">
+        <a href="contact.html" class="btn-ghost">Inquire →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RETAINERS -->
+<section class="retainers">
+  <div class="section-eyebrow fade-up">Optional</div>
+  <h2 class="section-h2 section-h2-dark fade-up">Monthly Support Retainers</h2>
+  <p class="section-sub section-sub-dark fade-up">Retainers are completely optional. Choose one if you want ongoing optimization, updates, or a dedicated point of contact.</p>
+  <div class="retainer-grid">
+    <div class="retainer-card fade-up">
+      <span class="retainer-tag">Tier 1</span>
+      <div class="retainer-name">Essential</div>
+      <div class="retainer-price">$297/mo</div>
+      <div class="retainer-desc">For businesses that want a safety net — minor updates, troubleshooting, and a monthly check-in.</div>
+      <ul class="retainer-includes">
+        <li>Monthly system check-in</li>
+        <li>Minor workflow updates</li>
+        <li>Bug fixes &amp; troubleshooting</li>
+        <li>Email support</li>
+      </ul>
+    </div>
+    <div class="retainer-card featured fade-up">
+      <span class="retainer-tag">Most Popular</span>
+      <div class="retainer-name">Growth</div>
+      <div class="retainer-price">$597/mo</div>
+      <div class="retainer-desc">For businesses actively growing — workflow additions, new automation builds, and proactive optimization.</div>
+      <ul class="retainer-includes">
+        <li>Everything in Essential</li>
+        <li>New workflow builds (up to 2/mo)</li>
+        <li>Pipeline optimization</li>
+        <li>Priority email + Slack support</li>
+        <li>Bi-weekly check-ins</li>
+      </ul>
+    </div>
+    <div class="retainer-card fade-up">
+      <span class="retainer-tag">Tier 3</span>
+      <div class="retainer-name">Priority</div>
+      <div class="retainer-price">$997/mo</div>
+      <div class="retainer-desc">For businesses that want HSP as their embedded ops partner — dedicated support, unlimited small updates, and strategic guidance.</div>
+      <ul class="retainer-includes">
+        <li>Everything in Growth</li>
+        <li>Unlimited small updates</li>
+        <li>Dedicated Slack channel</li>
+        <li>Weekly strategy calls</li>
+        <li>Same-day response SLA</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="section-eyebrow fade-up">Process</div>
+  <h2 class="section-h2 fade-up">How Every Build Works</h2>
+  <p class="section-sub fade-up">From first call to live system in under 2 weeks. Here's exactly what happens.</p>
+  <div class="process-steps">
+    <div class="p-step fade-up"><div class="p-step-num">01</div><div class="p-step-body"><div class="p-step-title">Discovery &amp; Scoping</div><div class="p-step-desc">We review your current lead flow, identify drop-off points, and map the exact system your business needs.</div><span class="p-step-tag">Day 1–2</span></div></div>
+    <div class="p-step fade-up"><div class="p-step-num">02</div><div class="p-step-body"><div class="p-step-title">System Build &amp; Configuration</div><div class="p-step-desc">CRM pipeline, forms, automations, notifications, and routing logic — all configured for your specific services.</div><span class="p-step-tag">Day 3–10</span></div></div>
+    <div class="p-step fade-up"><div class="p-step-num">03</div><div class="p-step-body"><div class="p-step-title">Form Installation &amp; Testing</div><div class="p-step-desc">Forms installed on your site, phone connected, every workflow tested end-to-end before going live.</div><span class="p-step-tag">Day 10–12</span></div></div>
+    <div class="p-step fade-up"><div class="p-step-num">04</div><div class="p-step-body"><div class="p-step-title">Launch &amp; Handoff</div><div class="p-step-desc">Go live, team walkthrough, everything running. From here, the system works without you thinking about it.</div><span class="p-step-tag">Day 12–14</span></div></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band">
+  <div>
+    <h2>Ready to Build Your System?</h2>
+    <p>Apply and we'll scope the exact build your business needs. Fixed price, clear timeline, no surprises.</p>
+  </div>
+  <a href="contact.html" class="btn-navy">Apply Now ↗</a>
+</div>
+
+<footer>
+  <div class="footer-brand">
+    <div class="footer-name">HSP <span>Systems</span></div>
+    <div class="footer-tagline">Lead response systems for service businesses</div>
+  </div>
+  <div class="footer-links">
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="cases.html">Results</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Apply</a>
+  </div>
+  <div class="footer-copy">© 2025 HSP Systems · Grand Haven, MI</div>
+</footer>
+
+<script>
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:0.08});
+document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
