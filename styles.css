@@ -30,18 +30,9 @@ nav {
   border-bottom:1px solid rgba(200,145,42,0.2);
 }
 .nav-brand { display:flex; align-items:center; gap:14px; text-decoration:none; }
-.nav-logo-mark {
-  width:36px; height:36px;
-  background:var(--gold);
-  display:flex; align-items:center; justify-content:center;
-  font-family:'Bebas Neue',sans-serif; font-size:20px; color:var(--navy-dark);
-  letter-spacing:0.05em;
+.nav-logo-img {
+  height:44px; width:auto;
 }
-.nav-brand-text {
-  font-family:'Bebas Neue',sans-serif; font-size:20px;
-  letter-spacing:0.12em; color:var(--white);
-}
-.nav-brand-text span { color:var(--gold); }
 .nav-links { display:flex; gap:2.5rem; align-items:center; }
 .nav-links a {
   font-size:12px; letter-spacing:0.1em; text-transform:uppercase;
