@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HSP Systems — Get High-Ticket Landscaping Leads Sent to Your Phone</title>
+<meta name="description" content="HSP Systems helps landscaping companies get $10K–$80K+ install, patio, and outdoor living leads — qualified and sent to your phone in under 2 minutes.">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* ─── HERO ─── */
+.lp-hero {
+  min-height:100vh;
+  background:var(--navy-dark);
+  display:grid; grid-template-columns:1fr 420px;
+  gap:4rem; align-items:center;
+  padding:120px 5rem 5rem;
+  position:relative; overflow:hidden;
+}
+.lp-hero-grid {
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(200,145,42,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,145,42,0.04) 1px, transparent 1px);
+  background-size:72px 72px;
+}
+.lp-hero-inner { position:relative; z-index:2; }
+.lp-hero-eyebrow {
+  display:inline-flex; align-items:center; gap:10px;
+  font-size:11px; letter-spacing:0.2em; text-transform:uppercase;
+  color:var(--gold); margin-bottom:2rem;
+}
+.lp-hero-eyebrow::before { content:''; width:24px; height:1px; background:var(--gold); }
+.lp-hero h1 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(48px,7vw,88px); line-height:0.92;
+  color:var(--white); margin-bottom:1.5rem;
+}
+.lp-hero h1 em { font-style:normal; color:var(--gold); display:block; }
+.lp-hero-sub {
+  font-family:'DM Serif Display',serif; font-style:italic;
+  font-size:clamp(16px,1.8vw,20px); color:rgba(255,255,255,0.45);
+  max-width:520px; line-height:1.55; margin-bottom:2rem;
+}
+.lp-hero-body {
+  font-size:15px; color:rgba(255,255,255,0.38); line-height:1.8;
+  max-width:500px; margin-bottom:2.5rem;
+}
+
+/* ─── PHONE MOCKUP ─── */
+.phone-mockup {
+  position:relative; z-index:2;
+  width:360px; margin:0 auto;
+}
+.phone-frame {
+  background:#0D0D0D; border-radius:36px;
+  border:3px solid #2A2A2A;
+  padding:16px 12px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);
+}
+.phone-notch {
+  width:120px; height:28px; background:#0D0D0D;
+  border-radius:0 0 16px 16px; margin:0 auto 12px;
+  border:1px solid #1A1A1A; border-top:none;
+}
+.phone-screen {
+  background:#111; border-radius:20px; overflow:hidden;
+  padding:20px 16px;
+}
+.phone-time {
+  font-size:48px; font-weight:300; color:#fff;
+  text-align:center; margin-bottom:4px;
+  font-family:'DM Sans',sans-serif;
+}
+.phone-date {
+  font-size:13px; color:rgba(255,255,255,0.5);
+  text-align:center; margin-bottom:20px;
+}
+.phone-notif {
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(20px);
+  border-radius:16px; padding:14px;
+  margin-bottom:8px;
+  border:1px solid rgba(255,255,255,0.06);
+}
+.phone-notif-header {
+  display:flex; align-items:center; gap:8px;
+  margin-bottom:8px;
+}
+.phone-notif-icon {
+  width:22px; height:22px; border-radius:5px;
+  background:var(--gold);
+  display:flex; align-items:center; justify-content:center;
+  font-size:10px; font-weight:700; color:var(--navy-dark);
+}
+.phone-notif-app { font-size:11px; color:rgba(255,255,255,0.5); }
+.phone-notif-time { font-size:10px; color:rgba(255,255,255,0.3); margin-left:auto; }
+.phone-notif-title { font-size:13px; font-weight:500; color:#fff; margin-bottom:4px; }
+.phone-notif-body { font-size:12px; color:rgba(255,255,255,0.6); line-height:1.5; }
+.phone-notif-body .highlight { color:var(--gold); font-weight:500; }
+.phone-notif.sms { border-left:3px solid #34C759; }
+.phone-notif.email { border-left:3px solid #5AC8FA; }
+.phone-notif.push { border-left:3px solid var(--gold); }
+.phone-label {
+  text-align:center; margin-top:16px;
+  font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
+  color:var(--gold); opacity:0.7;
+}
+
+/* ─── PAIN ─── */
+.lp-pain {
+  background:var(--gold); padding:4rem 5rem;
+}
+.lp-pain-title {
+  font-family:'Bebas Neue',sans-serif; font-size:36px;
+  color:var(--navy-dark); margin-bottom:2rem; text-align:center;
+}
+.pain-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:2px;
+}
+.pain-card {
+  background:rgba(28,46,92,0.08); padding:2rem;
+}
+.pain-card-q {
+  font-family:'DM Serif Display',serif; font-style:italic;
+  font-size:15px; color:var(--navy-dark); line-height:1.6;
+  margin-bottom:0.75rem;
+}
+.pain-card-desc {
+  font-size:12px; color:rgba(28,46,92,0.6); line-height:1.6;
+}
+
+/* ─── QUALIFIER ─── */
+.lp-qualifier {
+  background:var(--navy); padding:5rem;
+}
+.qualifier-box {
+  max-width:700px; margin:0 auto;
+  border:2px solid var(--gold);
+  padding:3rem;
+  text-align:center;
+}
+.qualifier-title {
+  font-family:'Bebas Neue',sans-serif; font-size:clamp(36px,5vw,52px);
+  color:var(--white); margin-bottom:1.5rem;
+}
+.qualifier-list {
+  list-style:none; text-align:left;
+  display:flex; flex-direction:column; gap:0;
+  margin-bottom:2rem;
+}
+.qualifier-list li {
+  padding:14px 0;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  font-size:15px; color:rgba(255,255,255,0.6);
+  display:flex; align-items:flex-start; gap:12px;
+  line-height:1.6;
+}
+.qualifier-list li:first-child { border-top:1px solid rgba(255,255,255,0.08); }
+.qualifier-check { color:var(--gold); font-weight:700; font-size:16px; flex-shrink:0; margin-top:1px; }
+.qualifier-not {
+  margin-top:1.5rem; padding:1rem 1.5rem;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.06);
+  font-size:12px; color:rgba(255,255,255,0.25); line-height:1.7;
+  text-align:left;
+}
+
+/* ─── PROCESS ─── */
+.lp-process { background:var(--cream); padding:6rem 5rem; }
+.process-grid {
+  display:grid; grid-template-columns:repeat(4,1fr); gap:2px;
+  margin-top:3rem;
+}
+.process-card {
+  background:var(--white); border:1px solid var(--border);
+  padding:2.5rem; text-align:center;
+  transition:border-color 0.2s;
+}
+.process-card:hover { border-color:var(--gold); }
+.process-num {
+  font-family:'Bebas Neue',sans-serif; font-size:48px;
+  color:var(--gold); line-height:1; margin-bottom:1rem;
+  opacity:0.4;
+}
+.process-card-title {
+  font-size:15px; font-weight:500; color:var(--navy);
+  margin-bottom:0.5rem;
+}
+.process-card-desc {
+  font-size:13px; color:var(--muted); line-height:1.7;
+}
+
+/* ─── WHAT THEY GET ─── */
+.lp-detail {
+  background:var(--navy-dark); padding:6rem 5rem;
+}
+.detail-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:4rem;
+  margin-top:3rem; align-items:start;
+}
+.detail-card {
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.07);
+  padding:2.5rem;
+}
+.detail-card-title {
+  font-family:'Bebas Neue',sans-serif; font-size:24px;
+  color:var(--white); margin-bottom:1rem;
+}
+.detail-card-body {
+  font-size:14px; color:rgba(255,255,255,0.45); line-height:1.8;
+}
+.detail-card-body strong { color:rgba(255,255,255,0.7); }
+
+/* ─── PROOF ─── */
+.lp-proof { background:var(--cream); padding:6rem 5rem; }
+.proof-box {
+  display:grid; grid-template-columns:280px 1fr auto; gap:0;
+  background:var(--white); border:1px solid var(--border);
+  overflow:hidden;
+}
+.proof-left {
+  background:var(--navy-dark); padding:2.5rem;
+  display:flex; flex-direction:column; gap:6px;
+  border-right:1px solid rgba(255,255,255,0.07);
+}
+.proof-type { font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); }
+.proof-name { font-family:'Bebas Neue',sans-serif; font-size:32px; color:var(--white); line-height:1.1; }
+.proof-url { font-size:11px; color:rgba(255,255,255,0.3); text-decoration:none; margin-top:auto; }
+.proof-url:hover { color:var(--gold); }
+.proof-mid { padding:2.5rem; }
+.proof-body { font-size:14px; color:var(--muted); line-height:1.8; margin-bottom:1rem; }
+.proof-tags { display:flex; flex-wrap:wrap; gap:6px; }
+.proof-tag { font-size:11px; color:var(--navy); border:1px solid var(--border); padding:4px 10px; }
+.proof-stats {
+  padding:2.5rem; border-left:1px solid var(--border);
+  display:flex; flex-direction:column; gap:1.5rem; min-width:160px;
+}
+.proof-stat { border-left:3px solid var(--gold); padding-left:12px; }
+.proof-stat-num { font-family:'Bebas Neue',sans-serif; font-size:32px; color:var(--navy); line-height:1; }
+.proof-stat-label { font-size:10px; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin-top:2px; }
+
+/* ─── FEARS ─── */
+.lp-fears { background:var(--navy); padding:6rem 5rem; }
+.fears-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:0 4rem;
+  margin-top:3rem;
+}
+.fear-item {
+  padding:1.5rem 0;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.fear-item:nth-child(1),
+.fear-item:nth-child(2) { border-top:1px solid rgba(255,255,255,0.08); }
+.fear-q { font-size:14px; font-weight:500; color:var(--white); margin-bottom:6px; }
+.fear-a { font-size:13px; color:rgba(255,255,255,0.4); line-height:1.7; }
+
+/* ─── CTA ─── */
+.lp-cta {
+  background:var(--navy-dark); padding:6rem 5rem;
+}
+.lp-cta-inner {
+  max-width:640px; margin:0 auto;
+}
+.lp-cta-form { display:flex; flex-direction:column; gap:12px; margin-top:2rem; }
+.lp-cta-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+
+@media(max-width:1000px){
+  .lp-hero { grid-template-columns:1fr; padding:100px 2rem 4rem; }
+  .phone-mockup { display:none; }
+  .pain-grid { grid-template-columns:1fr; }
+  .lp-pain, .lp-qualifier, .lp-process, .lp-detail, .lp-proof, .lp-fears, .lp-cta { padding:4rem 2rem; }
+  .process-grid { grid-template-columns:1fr 1fr; }
+  .detail-grid { grid-template-columns:1fr; }
+  .proof-box { grid-template-columns:1fr; }
+  .proof-left { border-right:none; border-bottom:1px solid rgba(255,255,255,0.07); }
+  .proof-stats { border-left:none; border-top:1px solid var(--border); flex-direction:row; flex-wrap:wrap; }
+  .fears-grid { grid-template-columns:1fr; }
+  .fear-item:nth-child(2) { border-top:none; }
+  .lp-cta-row { grid-template-columns:1fr; }
+  .qualifier-box { padding:2rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">
+    <img src="logo.png" alt="HSP Systems" class="nav-logo-img">
+  </a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="cleaning.html">Cleaning Companies</a>
+    <a href="cases.html">Results</a>
+    <a href="about.html">About</a>
+    <a href="#apply" class="nav-cta">See If You Qualify</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="lp-hero">
+  <div class="lp-hero-grid"></div>
+  <div class="lp-hero-inner">
+    <div class="lp-hero-eyebrow">For Landscaping Companies · West Michigan &amp; Beyond</div>
+    <h1>Get $80K Patio<br>&amp; Outdoor Living<br><em>Leads Sent to<br>Your Phone.</em></h1>
+    <p class="lp-hero-sub">Not mow-and-go price shoppers. Not Angi tire kickers. Real homeowners ready to spend real money on installs, hardscaping, and outdoor living.</p>
+    <p class="lp-hero-body">Your next $80,000 outdoor kitchen lead fills out a form. In under 60 seconds, your phone buzzes — you see their name, project details, photos, budget, and timeline. An AI assistant is already texting them back, answering their questions using your pricing, your availability, your voice. By the time you call, they already feel like they know you.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+      <a href="#apply" class="btn-gold">See If You Qualify</a>
+      <a href="cases.html" class="btn-ghost">See It in Action</a>
+    </div>
+  </div>
+
+  <!-- PHONE MOCKUP -->
+  <div class="phone-mockup">
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <div class="phone-time">9:41</div>
+        <div class="phone-date">Tuesday, April 8</div>
+
+        <div class="phone-notif push">
+          <div class="phone-notif-header">
+            <div class="phone-notif-icon">HS</div>
+            <span class="phone-notif-app">HSP Systems</span>
+            <span class="phone-notif-time">now</span>
+          </div>
+          <div class="phone-notif-title">New Lead — Outdoor Kitchen + Patio</div>
+          <div class="phone-notif-body">
+            Sarah M. · <span class="highlight">$75K–$90K budget</span><br>
+            Full outdoor kitchen, paver patio, fire pit, and landscape lighting. Wants to start in 3 weeks. Photos attached.
+          </div>
+        </div>
+
+        <div class="phone-notif sms">
+          <div class="phone-notif-header">
+            <div class="phone-notif-icon" style="background:#34C759;">💬</div>
+            <span class="phone-notif-app">Messages</span>
+            <span class="phone-notif-time">now</span>
+          </div>
+          <div class="phone-notif-title">AI Assistant → Sarah M.</div>
+          <div class="phone-notif-body">
+            "Hi Sarah! Thanks for reaching out. We'd love to help with your outdoor kitchen project. Based on what you described, this is right in our wheelhouse. Someone from our design team will call you shortly..."
+          </div>
+        </div>
+
+        <div class="phone-notif email">
+          <div class="phone-notif-header">
+            <div class="phone-notif-icon" style="background:#5AC8FA;">✉</div>
+            <span class="phone-notif-app">Email</span>
+            <span class="phone-notif-time">now</span>
+          </div>
+          <div class="phone-notif-title">Lead Details — Sarah M.</div>
+          <div class="phone-notif-body">
+            Project: Outdoor Kitchen + Patio<br>
+            Timeline: 3 weeks · Budget: <span class="highlight">$75K–$90K</span><br>
+            Address: ████ Lakeshore Dr, Grand Haven<br>
+            4 photos attached · Ready for consult
+          </div>
+        </div>
+
+        <div class="phone-label">This is what your phone looks like with HSP</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PAIN ═══ -->
+<section class="lp-pain">
+  <div class="lp-pain-title">Sound Familiar?</div>
+  <div class="pain-grid">
+    <div class="pain-card">
+      <div class="pain-card-q">"I've got crews, trucks, and equipment ready to go — but not enough good jobs on the board."</div>
+      <div class="pain-card-desc">You're paying for labor whether they're working or not. Empty schedule slots are costing you thousands every week.</div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-card-q">"We're doing estimates all week for people who just want the cheapest number."</div>
+      <div class="pain-card-desc">You drive out, measure, quote, follow up — and they ghosted because someone undercut you by $200. That's hours you'll never get back.</div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-card-q">"We're great at the big installs, but half the calls are for tiny mow-and-go jobs."</div>
+      <div class="pain-card-desc">You want $80K patios and outdoor kitchens. Instead, you're fielding calls about $50 lawn cuts and one-off mulch jobs.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ QUALIFIER ═══ -->
+<section class="lp-qualifier">
+  <div class="qualifier-box">
+    <div class="qualifier-title">This Works for You If:</div>
+    <ul class="qualifier-list">
+      <li><span class="qualifier-check">✓</span> You want higher-ticket installs, hardscaping, outdoor living, or commercial maintenance — not cheap mowing leads</li>
+      <li><span class="qualifier-check">✓</span> You or someone on your team can respond to qualified leads within a few hours</li>
+      <li><span class="qualifier-check">✓</span> You have crews and capacity — you just need the right jobs to fill the schedule</li>
+      <li><span class="qualifier-check">✓</span> You're tired of Angi, Thumbtack, and Home Advisor sending you price shoppers</li>
+      <li><span class="qualifier-check">✓</span> You want a system that handles follow-up, qualification, and booking — not another tool you have to babysit</li>
+    </ul>
+    <a href="#apply" class="btn-gold" style="width:100%;text-align:center;">Apply to See If You're a Fit</a>
+    <div class="qualifier-not">
+      This is <strong style="color:rgba(255,255,255,0.5);">not</strong> a good fit if: you only do basic lawn mowing · you don't want to call leads back · you need a full website redesign · you want us to run your ads or SEO
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROCESS ═══ -->
+<section class="lp-process">
+  <div class="section-eyebrow fade-up">How It Works</div>
+  <h2 class="section-h2 section-h2-dark fade-up">From Form Fill to Booked Estimate in Minutes.</h2>
+  <div class="process-grid">
+    <div class="process-card fade-up">
+      <div class="process-num">01</div>
+      <div class="process-card-title">Homeowner fills out your form</div>
+      <div class="process-card-desc">They tell you what they want — project type, budget range, timeline, property details, photos. The form qualifies them before they ever hit your inbox.</div>
+    </div>
+    <div class="process-card fade-up">
+      <div class="process-num">02</div>
+      <div class="process-card-title">You get notified instantly</div>
+      <div class="process-card-desc">Text, email, and push notification — all within 60 seconds. You see their name, project, budget, and photos before you call.</div>
+    </div>
+    <div class="process-card fade-up">
+      <div class="process-num">03</div>
+      <div class="process-card-title">AI engages them immediately</div>
+      <div class="process-card-desc">An AI assistant — trained on your business, services, and pricing — texts them back instantly. Answers questions, builds trust, and keeps them warm until you reach out.</div>
+    </div>
+    <div class="process-card fade-up">
+      <div class="process-num">04</div>
+      <div class="process-card-title">You show up and close the job</div>
+      <div class="process-card-desc">By the time you call or walk the property, they already know your process, your quality, and what to expect. No cold start. No chasing. Just close.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DETAIL ═══ -->
+<section class="lp-detail">
+  <div class="section-eyebrow fade-up">What You're Actually Getting</div>
+  <h2 class="section-h2 fade-up">Not More Leads. Better Leads. Handled Better.</h2>
+  <p class="section-sub fade-up">This isn't a CRM you have to learn. It's not a dashboard you'll never check. It's a system that runs without you thinking about it.</p>
+  <div class="detail-grid">
+    <div class="detail-card fade-up">
+      <div class="detail-card-title">Qualifying Intake Forms</div>
+      <div class="detail-card-body"><strong>Multi-step forms that filter out tire kickers before they reach you.</strong> Homeowners select their project type, enter property details, upload photos, and give you their budget range and timeline — so you know exactly what you're walking into before you call.</div>
+    </div>
+    <div class="detail-card fade-up">
+      <div class="detail-card-title">Instant Response System</div>
+      <div class="detail-card-body"><strong>Every form, every missed call — responded to in under 2 minutes.</strong> Text, email, and app notification hit your phone the moment a lead comes in. You're never the company that "never called back." Even if you're on a job site, the system handles it.</div>
+    </div>
+    <div class="detail-card fade-up">
+      <div class="detail-card-title">AI Assistant That Knows Your Business</div>
+      <div class="detail-card-body"><strong>Not a generic chatbot. An AI trained on YOUR services, pricing, availability, and process.</strong> It answers questions, sends info, and keeps the lead engaged while you or your team get to them. They feel taken care of from the first second.</div>
+    </div>
+    <div class="detail-card fade-up">
+      <div class="detail-card-title">Automated Booking &amp; Calendar</div>
+      <div class="detail-card-body"><strong>Leads can book a walkthrough or phone consultation directly on your calendar.</strong> The qualifying questions are already asked. No back-and-forth texting to find a time. No wasted drives for people who were never serious.</div>
+    </div>
+    <div class="detail-card fade-up">
+      <div class="detail-card-title">Follow-Up That Actually Happens</div>
+      <div class="detail-card-body"><strong>Quotes sent but not answered? The system follows up.</strong> Automated sequences nudge leads who went quiet — reminding them of their project, their timeline, and why they reached out. You stop losing jobs to your own forgetfulness.</div>
+    </div>
+    <div class="detail-card fade-up">
+      <div class="detail-card-title">Review Collection on Autopilot</div>
+      <div class="detail-card-body"><strong>Job done? The system asks for a Google review automatically.</strong> Happy clients go to Google. Unhappy clients get routed to you privately first — so you can resolve it before it goes public.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROOF ═══ -->
+<section class="lp-proof">
+  <div class="section-eyebrow fade-up">Proof</div>
+  <h2 class="section-h2 section-h2-dark fade-up">Built for a Real Landscaping Company.</h2>
+  <p class="section-sub section-sub-dark fade-up" style="margin-bottom:2rem;">This exact system was built and deployed at Wenke Landscaping — a multi-service company with four service lines. It's not a prototype. It's proven.</p>
+  <div class="proof-box fade-up">
+    <div class="proof-left">
+      <div class="proof-type">Landscaping · West Michigan</div>
+      <div class="proof-name">Wenke Landscaping</div>
+      <a href="https://wenkelandscaping.com" target="_blank" class="proof-url">wenkelandscaping.com ↗</a>
+    </div>
+    <div class="proof-mid">
+      <p class="proof-body">Four service lines — landscape design, hardscaping, maintenance, and snow removal — each with separate intake forms, routing logic, and follow-up sequences. Full CRM, hiring pipeline, phone routing, and booking system. Every lead qualified and routed to the right team automatically.</p>
+      <div class="proof-tags">
+        <span class="proof-tag">4-service lead routing</span>
+        <span class="proof-tag">Multi-step intake forms</span>
+        <span class="proof-tag">Hiring pipeline</span>
+        <span class="proof-tag">Phone routing</span>
+        <span class="proof-tag">Instant follow-up</span>
+        <span class="proof-tag">Booking + calendar</span>
+      </div>
+    </div>
+    <div class="proof-stats">
+      <div class="proof-stat">
+        <div class="proof-stat-num">4</div>
+        <div class="proof-stat-label">Service lines routed</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-stat-num">Auto</div>
+        <div class="proof-stat-label">All lead follow-up</div>
+      </div>
+      <div class="proof-stat">
+        <div class="proof-stat-num">&lt;2 min</div>
+        <div class="proof-stat-label">Response time</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEARS ═══ -->
+<section class="lp-fears">
+  <div class="section-eyebrow fade-up">Straight Answers</div>
+  <h2 class="section-h2 fade-up">What You're Probably Thinking.</h2>
+  <div class="fears-grid">
+    <div class="fear-item fade-up">
+      <div class="fear-q">"I don't want to pay for a bunch of leads that just want the cheapest quote."</div>
+      <div class="fear-a">Neither do we. The intake forms qualify people before they reach you — project type, budget range, timeline, photos. Price shoppers self-select out. You only talk to people who are serious.</div>
+    </div>
+    <div class="fear-item fade-up">
+      <div class="fear-q">"I've been burned by agencies that promised 'more leads' but didn't understand my business."</div>
+      <div class="fear-a">We're not running your ads. We're not doing your SEO. We build the system that handles the leads you already get — and makes sure none of them slip through the cracks to your competitor.</div>
+    </div>
+    <div class="fear-item fade-up">
+      <div class="fear-q">"I'm worried you'll flood me with work I can't service."</div>
+      <div class="fear-a">The system qualifies leads based on YOUR criteria — service area, project type, minimum budget, timeline. You set the filters. We build the infrastructure. You stay in control.</div>
+    </div>
+    <div class="fear-item fade-up">
+      <div class="fear-q">"I don't have time to learn another tool."</div>
+      <div class="fear-a">You don't have to. The system runs without you thinking about it. You get notified. You call. You close. That's it. We handle the setup, the automations, and the ongoing infrastructure.</div>
+    </div>
+    <div class="fear-item fade-up">
+      <div class="fear-q">"How is this different from every other GHL agency?"</div>
+      <div class="fear-a">This system was built inside a real landscaping company — Wenke Landscaping — with four service lines and real routing logic. It's not a template. It was deployed, tested, and refined in the field before we ever offered it to anyone else.</div>
+    </div>
+    <div class="fear-item fade-up">
+      <div class="fear-q">"I don't want long contracts or vague reporting."</div>
+      <div class="fear-a">No long-term contracts. No vanity metrics. You'll see exactly how many leads came in, how fast they were responded to, and which ones booked. If it's not working, you'll know — and so will we.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ APPLY ═══ -->
+<section class="lp-cta" id="apply">
+  <div class="lp-cta-inner">
+    <div class="section-eyebrow fade-up">Apply</div>
+    <h2 class="section-h2 fade-up">See If This Is a Fit for Your Company.</h2>
+    <p class="section-sub fade-up" style="margin-bottom:0;">We only work with landscaping companies we can genuinely help. Fill this out and we'll review your current setup before reaching out.</p>
+    <div class="lp-cta-form fade-up">
+      <div class="lp-cta-row">
+        <div>
+          <label class="form-label">First Name</label>
+          <input type="text" placeholder="John" class="form-input">
+        </div>
+        <div>
+          <label class="form-label">Last Name</label>
+          <input type="text" placeholder="Smith" class="form-input">
+        </div>
+      </div>
+      <div>
+        <label class="form-label">Company Name</label>
+        <input type="text" placeholder="Your landscaping company" class="form-input">
+      </div>
+      <div class="lp-cta-row">
+        <div>
+          <label class="form-label">Email</label>
+          <input type="email" placeholder="john@yourcompany.com" class="form-input">
+        </div>
+        <div>
+          <label class="form-label">Phone</label>
+          <input type="tel" placeholder="(616) 555-0123" class="form-input">
+        </div>
+      </div>
+      <div>
+        <label class="form-label">Website</label>
+        <input type="text" placeholder="yourcompany.com" class="form-input">
+      </div>
+      <div>
+        <label class="form-label">What kind of jobs do you most want to fill your schedule with?</label>
+        <select class="form-input">
+          <option value="" disabled selected>Select your highest-value service</option>
+          <option>Patios, Outdoor Kitchens & Outdoor Living</option>
+          <option>Hardscaping (Retaining Walls, Pavers, Fire Pits)</option>
+          <option>Landscape Design & Full Installs</option>
+          <option>Commercial Maintenance Contracts</option>
+          <option>Drainage, Grading & Irrigation</option>
+          <option>Snow Removal / Winter Services</option>
+          <option>Multiple / All of the Above</option>
+        </select>
+      </div>
+      <div>
+        <label class="form-label">What's the biggest problem in your business right now?</label>
+        <textarea rows="3" placeholder="Not enough of the right jobs, too many price shoppers, crews sitting around, slow season coming up..." class="form-input"></textarea>
+      </div>
+      <button type="button" class="btn-gold" style="width:100%;text-align:center;padding:18px;">Submit Application</button>
+      <p style="font-size:11px;color:rgba(255,255,255,0.2);text-align:center;">We respond within 24 hours. No sales pitch — we review your setup first.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <img src="logo.png" alt="HSP Systems" style="height:36px;width:auto;">
+    <div class="footer-tagline">Lead response systems for service businesses</div>
+  </div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="cleaning.html">Cleaning</a>
+    <a href="cases.html">Results</a>
+    <a href="about.html">About</a>
+  </div>
+  <div class="footer-copy">© 2025 HSP Systems · Grand Haven, MI</div>
+</footer>
+
+<script>
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:0.08});
+document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
