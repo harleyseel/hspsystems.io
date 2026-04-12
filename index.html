@@ -3,538 +3,277 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HSP Systems — Lead Response Systems for Service Businesses</title>
-<meta name="description" content="HSP Systems builds automated lead response infrastructure so estimate-based service businesses never lose a prospect to slow follow-up again.">
+<title>HSP Systems — Lead Response Systems for Home Service Businesses</title>
+<meta name="description" content="HSP Systems builds automated lead response systems for landscaping, cleaning, and home service businesses. Every lead captured, qualified, and followed up in under 2 minutes.">
+<meta name="keywords" content="lead response system, home service business automation, landscaping leads, cleaning company CRM, service business lead management, missed call text back, automated follow-up">
+<link rel="canonical" href="https://hspsystems.io/">
+<meta property="og:title" content="HSP Systems — Lead Response Systems for Home Service Businesses">
+<meta property="og:description" content="Every lead captured, qualified, and followed up in under 2 minutes. Built for landscaping, cleaning, and home service companies.">
+<meta property="og:url" content="https://hspsystems.io/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://hspsystems.io/logo.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"HSP Systems","description":"Lead response systems for home service businesses.","url":"https://hspsystems.io","areaServed":"United States","address":{"@type":"PostalAddress","addressLocality":"Grand Haven","addressRegion":"MI","addressCountry":"US"},"sameAs":["https://instagram.com/hspsystems.io"]}
+</script>
 <style>
-/* ─── HERO ─── */
-.hero {
-  min-height:100vh;
-  background:var(--navy-dark);
-  display:flex; flex-direction:column; justify-content:center;
-  padding:120px 5rem 6rem;
-  position:relative; overflow:hidden;
-}
-.hero-grid {
-  position:absolute; inset:0;
-  background-image:
-    linear-gradient(rgba(200,145,42,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(200,145,42,0.05) 1px, transparent 1px);
-  background-size:72px 72px;
-}
-.hero-glow {
-  position:absolute; top:-200px; right:-100px;
-  width:700px; height:700px; border-radius:50%;
-  background:radial-gradient(circle, rgba(200,145,42,0.08) 0%, transparent 70%);
-  pointer-events:none;
-}
-.hero-inner { position:relative; z-index:2; max-width:900px; }
-.hero-eyebrow {
-  display:inline-flex; align-items:center; gap:10px;
-  font-size:11px; letter-spacing:0.2em; text-transform:uppercase;
-  color:var(--gold); margin-bottom:2rem;
-}
-.hero-eyebrow-line { width:28px; height:1px; background:var(--gold); }
-.hero-h1 {
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(64px, 10vw, 130px);
-  line-height:0.88; letter-spacing:0.01em;
-  color:var(--white); margin-bottom:2rem;
-}
-.hero-h1 em { font-style:normal; color:var(--gold); display:block; }
-.hero-sub {
-  font-family:'DM Serif Display',serif; font-style:italic;
-  font-size:clamp(18px,2.2vw,24px); color:rgba(255,255,255,0.5);
-  margin-bottom:2.5rem; max-width:580px; line-height:1.5;
-}
-.hero-body {
-  font-size:16px; line-height:1.9; color:rgba(255,255,255,0.45);
-  max-width:540px; margin-bottom:3.5rem;
-}
-.hero-actions { display:flex; gap:1rem; flex-wrap:wrap; align-items:center; }
-.hero-proof {
-  position:absolute; right:5rem; bottom:5rem; z-index:2;
-  display:flex; flex-direction:column; gap:2px;
-}
-.proof-card {
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.08);
-  border-left:3px solid var(--gold);
-  padding:1.25rem 1.75rem; min-width:220px;
-}
-.proof-num { font-family:'Bebas Neue',sans-serif; font-size:40px; line-height:1; color:var(--white); }
-.proof-label { font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-top:2px; }
-
-/* ─── PAIN STRIP ─── */
-.pain-strip {
-  background:var(--gold);
-  padding:0 5rem;
-  display:flex; align-items:stretch;
-}
-.pain-item {
-  flex:1; padding:2rem 2.5rem;
-  border-right:1px solid rgba(28,46,92,0.2);
-  display:flex; align-items:flex-start; gap:14px;
-}
-.pain-item:last-child { border-right:none; }
-.pain-icon {
-  width:32px; height:32px; min-width:32px;
-  background:rgba(28,46,92,0.15);
-  display:flex; align-items:center; justify-content:center; margin-top:2px;
-}
-.pain-icon svg { width:15px; height:15px; stroke:var(--navy-dark); fill:none; stroke-width:2; }
-.pain-title { font-size:13px; font-weight:500; color:var(--navy-dark); margin-bottom:3px; }
-.pain-desc { font-size:12px; color:rgba(28,46,92,0.65); line-height:1.6; }
-
-/* ─── HOW ─── */
-.how { background:var(--navy); padding:7rem 5rem; }
-.steps { display:flex; flex-direction:column; gap:2px; }
-.step {
-  display:grid; grid-template-columns:80px 1fr;
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(255,255,255,0.07);
-  transition:background 0.2s;
-}
-.step:hover { background:rgba(255,255,255,0.06); }
-.step-num {
-  background:rgba(255,255,255,0.05);
-  display:flex; align-items:center; justify-content:center;
-  font-family:'Bebas Neue',sans-serif; font-size:36px;
-  color:rgba(255,255,255,0.15); border-right:1px solid rgba(255,255,255,0.07);
-}
-.step-body { padding:1.75rem 2.5rem; }
-.step-title { font-size:15px; font-weight:500; color:var(--white); margin-bottom:6px; }
-.step-desc { font-size:13px; color:rgba(255,255,255,0.4); line-height:1.7; }
-.step-tag {
-  display:inline-block; margin-top:10px;
-  font-size:10px; letter-spacing:0.1em; text-transform:uppercase;
-  color:var(--gold); background:rgba(200,145,42,0.12); padding:3px 8px;
-}
-
-/* ─── OFFER ─── */
-.offer { background:var(--cream); padding:7rem 5rem; }
-.offer-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; margin-top:4rem; }
-.offer-main { background:var(--navy-dark); border:2px solid var(--gold); padding:3rem; }
-.offer-badge {
-  font-size:10px; letter-spacing:0.15em; text-transform:uppercase;
-  background:var(--gold); color:var(--navy-dark);
-  padding:4px 12px; display:inline-block; margin-bottom:1.5rem;
-}
-.offer-name { font-family:'Bebas Neue',sans-serif; font-size:40px; color:var(--white); line-height:1; margin-bottom:0.5rem; }
-.offer-pricing { margin:1.5rem 0; display:flex; align-items:baseline; gap:8px; }
-.offer-price-big { font-family:'Bebas Neue',sans-serif; font-size:52px; color:var(--gold-light); line-height:1; }
-.offer-price-detail { font-size:13px; color:rgba(255,255,255,0.4); line-height:1.5; }
-.offer-divider { border:none; border-top:1px solid rgba(255,255,255,0.08); margin:1.5rem 0; }
-.offer-includes { list-style:none; display:flex; flex-direction:column; gap:0; }
-.offer-includes li {
-  padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.06);
-  font-size:13px; color:rgba(255,255,255,0.6);
-  display:flex; align-items:center; gap:10px;
-}
-.offer-includes li:last-child { border-bottom:none; }
-.offer-includes li::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0; }
-.offer-not {
-  margin-top:1.5rem; padding:1rem 1.25rem;
-  background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06);
-  font-size:12px; color:rgba(255,255,255,0.25); line-height:1.7;
-}
-.module-card {
-  background:var(--white); border:1px solid var(--border);
-  padding:1.5rem 2rem;
-  display:flex; justify-content:space-between; align-items:flex-start;
-  transition:border-color 0.2s;
-}
-.module-card:hover { border-color:var(--gold); }
-.module-name { font-size:14px; font-weight:500; color:var(--navy); margin-bottom:4px; }
-.module-desc { font-size:12px; color:var(--muted); }
-.module-price { font-family:'Bebas Neue',sans-serif; font-size:26px; color:var(--navy); text-align:right; white-space:nowrap; }
-.module-price-sub { font-size:10px; color:var(--muted); text-align:right; }
-.offer-note {
-  margin-top:2rem; padding:1.25rem 1.5rem;
-  border-left:3px solid var(--gold); background:var(--gold-pale);
-  font-size:13px; color:var(--navy); line-height:1.7;
-}
-
-/* ─── CASES PREVIEW ─── */
-.cases-preview { background:var(--navy-dark); padding:7rem 5rem; }
-.case-preview-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-top:3rem; }
-.case-card {
-  background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07);
-  padding:2.5rem; transition:background 0.25s;
-}
-.case-card:hover { background:rgba(255,255,255,0.06); }
-.case-card-type { font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); margin-bottom:0.75rem; }
-.case-card-name { font-family:'Bebas Neue',sans-serif; font-size:32px; color:var(--white); line-height:1.1; margin-bottom:1rem; }
-.case-card-body { font-size:14px; line-height:1.8; color:rgba(255,255,255,0.45); margin-bottom:1.5rem; }
-.case-card-stats { display:flex; gap:2rem; margin-bottom:1.5rem; }
-.case-card-stat { border-left:2px solid var(--gold); padding-left:10px; }
-.case-card-stat-num { font-family:'Bebas Neue',sans-serif; font-size:28px; color:var(--gold-light); line-height:1; }
-.case-card-stat-label { font-size:10px; text-transform:uppercase; letter-spacing:0.08em; color:rgba(255,255,255,0.3); margin-top:2px; }
-.case-card-link { font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); text-decoration:none; }
-.case-card-link:hover { color:var(--gold-light); }
-
-/* ─── WHY ─── */
-.why { background:var(--cream); padding:7rem 5rem; display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
-.why-points { margin-top:3rem; display:flex; flex-direction:column; gap:0; }
-.why-point {
-  padding:1.5rem 0; border-bottom:1px solid var(--border);
-  display:grid; grid-template-columns:44px 1fr; gap:16px; align-items:start;
-}
-.why-point:first-child { border-top:1px solid var(--border); }
-.why-point-num { font-family:'Bebas Neue',sans-serif; font-size:20px; color:var(--gold); margin-top:2px; }
-.why-point-title { font-size:14px; font-weight:500; color:var(--navy); margin-bottom:4px; }
-.why-point-desc { font-size:13px; color:var(--muted); line-height:1.7; }
-.why-right { background:var(--navy); padding:3rem; }
-.why-right-label { font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:2rem; }
-.compare-row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:0; margin-bottom:2px; }
-.compare-head { font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.35); padding:0.75rem 1rem; text-align:center; }
-.compare-head.accent { color:var(--gold); }
-.compare-cell { padding:0.875rem 1rem; font-size:12px; color:rgba(255,255,255,0.5); background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); text-align:center; line-height:1.4; }
-.compare-cell.hsp { background:rgba(200,145,42,0.08); color:rgba(255,255,255,0.75); }
-.compare-label { padding:0.875rem 0; font-size:12px; color:rgba(255,255,255,0.35); background:transparent; border:none; text-align:left; }
-.compare-yes { color:var(--gold-light); font-weight:500; }
-.compare-no { color:rgba(255,255,255,0.2); }
-
+.hero{min-height:100vh;background:var(--navy-dark);display:flex;flex-direction:column;justify-content:center;padding:120px 5rem 6rem;position:relative;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(200,145,42,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(200,145,42,0.05) 1px,transparent 1px);background-size:72px 72px}
+.hero-glow{position:absolute;top:-200px;right:-100px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(200,145,42,0.08) 0%,transparent 70%);pointer-events:none}
+.hero-inner{position:relative;z-index:2;max-width:900px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem}
+.hero-eyebrow-line{width:28px;height:1px;background:var(--gold)}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,9vw,120px);line-height:0.9;color:var(--white);margin-bottom:2rem}
+.hero-h1 em{font-style:normal;color:var(--gold)}
+.hero-sub{font-family:'DM Serif Display',serif;font-style:italic;font-size:clamp(18px,2.2vw,24px);color:rgba(255,255,255,0.5);margin-bottom:2rem;max-width:580px;line-height:1.5}
+.hero-body{font-size:17px;line-height:1.9;color:rgba(255,255,255,0.45);max-width:540px;margin-bottom:3rem}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-proof{position:absolute;right:5rem;bottom:5rem;z-index:2;display:flex;flex-direction:column;gap:2px}
+.proof-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-left:3px solid var(--gold);padding:1.25rem 1.75rem;min-width:220px}
+.proof-num{font-family:'Bebas Neue',sans-serif;font-size:40px;line-height:1;color:var(--white)}
+.proof-label{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:2px}
+.pain-strip{background:var(--gold);padding:0 5rem;display:flex;align-items:stretch}
+.pain-item{flex:1;padding:2rem 2.5rem;border-right:1px solid rgba(28,46,92,0.2);display:flex;align-items:flex-start;gap:14px}
+.pain-item:last-child{border-right:none}
+.pain-icon{width:32px;height:32px;min-width:32px;background:rgba(28,46,92,0.15);display:flex;align-items:center;justify-content:center;margin-top:2px}
+.pain-icon svg{width:15px;height:15px;stroke:var(--navy-dark);fill:none;stroke-width:2}
+.pain-title{font-size:14px;font-weight:500;color:var(--navy-dark);margin-bottom:4px}
+.pain-desc{font-size:13px;color:rgba(28,46,92,0.65);line-height:1.7}
+.niche-router{background:var(--cream);padding:6rem 5rem}
+.niche-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:3rem}
+.niche-card{background:var(--white);border:1px solid var(--border);padding:3rem;text-decoration:none;display:block;transition:border-color 0.25s,transform 0.2s}
+.niche-card:hover{border-color:var(--gold);transform:translateY(-3px)}
+.niche-card-tag{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block}
+.niche-card-title{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--navy);line-height:1.1;margin-bottom:1rem}
+.niche-card-body{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:1.5rem}
+.niche-card-examples{font-size:13px;color:rgba(90,90,90,0.6);line-height:1.6;margin-bottom:1.5rem}
+.niche-card-link{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.how{background:var(--navy);padding:6rem 5rem}
+.process-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:3rem}
+.process-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);padding:2.5rem;text-align:center;transition:background 0.2s}
+.process-card:hover{background:rgba(255,255,255,0.06)}
+.process-num{font-family:'Bebas Neue',sans-serif;font-size:48px;color:rgba(255,255,255,0.1);line-height:1;margin-bottom:1rem}
+.process-title{font-size:15px;font-weight:500;color:var(--white);margin-bottom:0.5rem}
+.process-desc{font-size:14px;color:rgba(255,255,255,0.4);line-height:1.7}
+.cases-preview{background:var(--navy-dark);padding:6rem 5rem}
+.case-preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:3rem}
+.case-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);padding:2.5rem;transition:background 0.25s}
+.case-card:hover{background:rgba(255,255,255,0.06)}
+.case-card-type{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem}
+.case-card-name{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--white);line-height:1.1;margin-bottom:1rem}
+.case-card-body{font-size:15px;line-height:1.8;color:rgba(255,255,255,0.45);margin-bottom:1.5rem}
+.case-card-stats{display:flex;gap:2rem;margin-bottom:1.5rem}
+.case-card-stat{border-left:2px solid var(--gold);padding-left:10px}
+.case-card-stat-num{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--gold-light);line-height:1}
+.case-card-stat-label{font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.3);margin-top:2px}
+.case-card-link{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);text-decoration:none}
+.why{background:var(--cream);padding:6rem 5rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.why-points{margin-top:3rem;display:flex;flex-direction:column}
+.why-point{padding:1.5rem 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start}
+.why-point:first-child{border-top:1px solid var(--border)}
+.why-point-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--gold);margin-top:2px}
+.why-point-title{font-size:15px;font-weight:500;color:var(--navy);margin-bottom:4px}
+.why-point-desc{font-size:14px;color:var(--muted);line-height:1.7}
+.why-right{background:var(--navy);padding:3rem}
+.why-right-label{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem}
+.compare-row{display:grid;grid-template-columns:1fr 1fr 1fr;margin-bottom:2px}
+.compare-head{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);padding:0.75rem 1rem;text-align:center}
+.compare-head.accent{color:var(--gold)}
+.compare-cell{padding:0.875rem 1rem;font-size:13px;color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);text-align:center}
+.compare-cell.hsp{background:rgba(200,145,42,0.08);color:rgba(255,255,255,0.75)}
+.compare-label{padding:0.875rem 0;font-size:13px;color:rgba(255,255,255,0.35);text-align:left}
+.compare-yes{color:var(--gold-light);font-weight:500}
+.compare-no{color:rgba(255,255,255,0.2)}
+.apply-section{background:var(--navy-dark);padding:6rem 5rem}
+.apply-inner{max-width:640px;margin:0 auto}
+.apply-form{display:flex;flex-direction:column;gap:12px;margin-top:2rem}
+.apply-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ghl-embed-container{margin-top:2rem;min-height:400px}
 @media(max-width:1000px){
-  .hero { padding:100px 2rem 4rem; }
-  .hero-proof { display:none; }
-  .pain-strip { flex-direction:column; padding:0 2rem; }
-  .pain-item { border-right:none; border-bottom:1px solid rgba(28,46,92,0.15); }
-  .how, .offer, .cases-preview, .why { padding:4rem 2rem; }
-  .offer-grid { grid-template-columns:1fr; }
-  .case-preview-grid { grid-template-columns:1fr; }
-  .why { grid-template-columns:1fr; }
+  .hero{padding:100px 2rem 4rem}.hero-proof{display:none}
+  .pain-strip{flex-direction:column;padding:0 2rem}.pain-item{border-right:none;border-bottom:1px solid rgba(28,46,92,0.15)}
+  .niche-router,.how,.cases-preview,.why,.apply-section{padding:4rem 2rem}
+  .niche-grid,.case-preview-grid,.why{grid-template-columns:1fr}
+  .process-row{grid-template-columns:1fr 1fr}
+  .apply-row{grid-template-columns:1fr}
 }
+@media(max-width:600px){.process-row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-
-<!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-brand">
-    <img src="logo.png" alt="HSP Systems" class="nav-logo-img">
-    
-  </a>
-  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">
-    <span></span><span></span><span></span>
-  </button>
+  <a href="index.html" class="nav-brand"><img src="logo.png" alt="HSP Systems" class="nav-logo-img"></a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></button>
   <div class="nav-links">
-    <a href="services.html">Services</a>
     <a href="about.html">About</a>
     <a href="cases.html">Results</a>
-    <a href="blog.html">Blog</a>
-    <a href="contact.html" class="nav-cta">Apply Now</a>
+    <a href="landscaping.html">Landscaping</a>
+    <a href="cleaning.html">Cleaning</a>
+    <a href="#apply" class="nav-cta">See If You Qualify</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
   <div class="hero-inner">
-    <div class="hero-eyebrow">
-      <span class="hero-eyebrow-line"></span>
-      Lead Response Systems · West Michigan
-    </div>
-    <h1 class="hero-h1">
-      Stop Losing
-      <em>Jobs to Slow</em>
-      Follow-Up.
-    </h1>
-    <p class="hero-sub">We build the system that responds to every lead in under 2 minutes — even when you're on a job site.</p>
-    <p class="hero-body">Missed calls, ignored forms, and slow follow-up are costing service businesses thousands every month. HSP Systems builds automated lead response infrastructure so estimate-based businesses never let a prospect slip to a competitor again.</p>
+    <div class="hero-eyebrow"><span class="hero-eyebrow-line"></span>Lead Response Systems for Service Businesses</div>
+    <h1 class="hero-h1">Stop Losing Jobs<br><em>to Slow Follow-Up.</em></h1>
+    <p class="hero-sub">Your next high-ticket lead fills out a form. In under 60 seconds, your phone buzzes with their name, project details, and budget. An AI assistant is already texting them back.</p>
+    <p class="hero-body">Missed calls, ignored forms, and slow follow-up are costing service businesses thousands every month. While you're busy running your business, your competitor already called them back. HSP Systems makes sure that never happens again.</p>
     <div class="hero-actions">
-      <a href="contact.html" class="btn-gold">Apply for a Demo</a>
+      <a href="#apply" class="btn-gold">See If You Qualify</a>
       <a href="cases.html" class="btn-ghost">See Real Results</a>
     </div>
   </div>
   <div class="hero-proof">
-    <div class="proof-card">
-      <div class="proof-num">&lt;2 min</div>
-      <div class="proof-label">Average lead response time</div>
-    </div>
-    <div class="proof-card">
-      <div class="proof-num">100%</div>
-      <div class="proof-label">Missed calls followed up automatically</div>
-    </div>
-    <div class="proof-card">
-      <div class="proof-num">$0</div>
-      <div class="proof-label">Spent on additional office staff</div>
-    </div>
+    <div class="proof-card"><div class="proof-num">&lt;2 min</div><div class="proof-label">Average lead response time</div></div>
+    <div class="proof-card"><div class="proof-num">100%</div><div class="proof-label">Missed calls followed up automatically</div></div>
+    <div class="proof-card"><div class="proof-num">$0</div><div class="proof-label">Spent on additional office staff</div></div>
   </div>
 </section>
 
-<!-- PAIN STRIP -->
 <div class="pain-strip">
-  <div class="pain-item">
-    <div class="pain-icon">
-      <svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-    </div>
-    <div>
-      <div class="pain-title">Missed calls = missed jobs</div>
-      <div class="pain-desc">If you don't call back within 5 minutes, 80% of prospects move on.</div>
-    </div>
-  </div>
-  <div class="pain-item">
-    <div class="pain-icon">
-      <svg viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-    </div>
-    <div>
-      <div class="pain-title">Forms that go nowhere</div>
-      <div class="pain-desc">Most service business websites collect leads that nobody follows up on.</div>
-    </div>
-  </div>
-  <div class="pain-item">
-    <div class="pain-icon">
-      <svg viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-    </div>
-    <div>
-      <div class="pain-title">You're too busy to respond</div>
-      <div class="pain-desc">You're on a job. The phone rings. Nobody answers. The lead calls your competitor.</div>
-    </div>
-  </div>
-  <div class="pain-item">
-    <div class="pain-icon">
-      <svg viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-    </div>
-    <div>
-      <div class="pain-title">Revenue you never see</div>
-      <div class="pain-desc">Every unanswered lead at $1,000+ avg job value is money silently walking out the door.</div>
-    </div>
-  </div>
+  <div class="pain-item"><div class="pain-icon"><svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg></div><div><div class="pain-title">Phone rings, nobody answers</div><div class="pain-desc">You're busy. The lead calls your competitor instead. That's a $5,000+ job gone in 30 seconds.</div></div></div>
+  <div class="pain-item"><div class="pain-icon"><svg viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div><div><div class="pain-title">Forms go nowhere</div><div class="pain-desc">Someone fills out your website form. Nobody follows up for days. By then, they've already hired someone else.</div></div></div>
+  <div class="pain-item"><div class="pain-icon"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div><div class="pain-title">Too busy to chase leads</div><div class="pain-desc">You're running crews, driving to estimates, and managing operations. Following up manually isn't realistic.</div></div></div>
+  <div class="pain-item"><div class="pain-icon"><svg viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg></div><div><div class="pain-title">Revenue you never see</div><div class="pain-desc">Every unanswered lead is money that silently walked out the door. You'll never know how much you're losing.</div></div></div>
 </div>
 
-<!-- HOW IT WORKS -->
-<section class="how" id="how">
-  <div class="section-eyebrow fade-up">The System</div>
-  <h2 class="section-h2 fade-up">How HSP Works</h2>
-  <p class="section-sub fade-up">We build and launch your lead response system in under 2 weeks. You get the platform, the automation, and the pipeline — ready to run.</p>
-  <div class="steps">
-    <div class="step fade-up">
-      <div class="step-num">01</div>
-      <div class="step-body">
-        <div class="step-title">Discovery &amp; Scoping</div>
-        <div class="step-desc">We review your current lead flow, identify where prospects are dropping off, and map the exact system your business needs. One call, one clear plan.</div>
-        <span class="step-tag">Day 1–2</span>
-      </div>
-    </div>
-    <div class="step fade-up">
-      <div class="step-num">02</div>
-      <div class="step-body">
-        <div class="step-title">System Build &amp; Configuration</div>
-        <div class="step-desc">We build your CRM pipeline, multi-step intake forms, instant text-back automations, missed-call follow-up, and team notifications — configured for your services and routing logic.</div>
-        <span class="step-tag">Day 3–10</span>
-      </div>
-    </div>
-    <div class="step fade-up">
-      <div class="step-num">03</div>
-      <div class="step-body">
-        <div class="step-title">Form Installation &amp; Testing</div>
-        <div class="step-desc">We install the forms on your existing website, connect your phone number, test every workflow end-to-end, and verify every lead path before going live.</div>
-        <span class="step-tag">Day 10–12</span>
-      </div>
-    </div>
-    <div class="step fade-up">
-      <div class="step-num">04</div>
-      <div class="step-body">
-        <div class="step-title">Launch &amp; Handoff</div>
-        <div class="step-desc">We go live, walk your team through the system, and make sure everything is running cleanly. From that point on, the system works without you having to think about it.</div>
-        <span class="step-tag">Day 12–14</span>
-      </div>
-    </div>
-    <div class="step fade-up">
-      <div class="step-num">05</div>
-      <div class="step-body">
-        <div class="step-title">Ongoing Platform Access</div>
-        <div class="step-desc">Your system lives under the HSP managed platform. Monthly access keeps your automations running, your pipeline active, and your forms connected.</div>
-        <span class="step-tag">Every month</span>
-      </div>
-    </div>
-  </div>
-  <div style="margin-top:3rem;" class="fade-up">
-    <a href="services.html" class="btn-ghost">View All Services →</a>
+<section class="niche-router">
+  <div class="section-eyebrow fade-up">Who We Help</div>
+  <h2 class="section-h2 section-h2-dark fade-up">Pick Your Industry. See What We Build.</h2>
+  <p class="section-sub section-sub-dark fade-up">We build niche-specific lead response systems. The forms, the AI, the follow-up — all configured for how your industry actually works.</p>
+  <div class="niche-grid">
+    <a href="landscaping.html" class="niche-card fade-up">
+      <span class="niche-card-tag">Landscaping &amp; Outdoor Living</span>
+      <div class="niche-card-title">Get $80K Patio &amp; Install Leads Sent to Your Phone</div>
+      <p class="niche-card-body">Stop fielding $50 mow-and-go calls. Get qualified homeowners ready to spend real money on outdoor kitchens, hardscaping, and full installs — with budget and project details attached.</p>
+      <div class="niche-card-examples">Patios · Outdoor Kitchens · Hardscaping · Retaining Walls · Design-Build · Commercial Maintenance</div>
+      <span class="niche-card-link">See Landscaping System →</span>
+    </a>
+    <a href="cleaning.html" class="niche-card fade-up">
+      <span class="niche-card-tag">Cleaning Companies</span>
+      <div class="niche-card-title">Get $150K Commercial Contracts &amp; Recurring Clients</div>
+      <p class="niche-card-body">Stop quoting one-time deep cleans for price shoppers. Get property managers and homeowners ready to sign recurring agreements — with scope and frequency already provided.</p>
+      <div class="niche-card-examples">Commercial Janitorial · Recurring Residential · Post-Construction · Property Management · Airbnb</div>
+      <span class="niche-card-link">See Cleaning System →</span>
+    </a>
   </div>
 </section>
 
-<!-- OFFER PREVIEW -->
-<section class="offer" id="offer">
-  <div class="section-eyebrow fade-up">Pricing</div>
-  <h2 class="section-h2 section-h2-dark fade-up">One Core Offer.</h2>
-  <p class="section-sub section-sub-dark fade-up">Start with the Lead Response System. Add modules as your business grows.</p>
-
-  <div class="offer-grid">
-    <div class="offer-main fade-up">
-      <span class="offer-badge">Default Quote</span>
-      <div class="offer-name">Lead Response System</div>
-      <div class="offer-pricing">
-        <div class="offer-price-big">$1,500</div>
-        <div class="offer-price-detail">one-time setup<br>+ $397/mo platform access</div>
-      </div>
-      <hr class="offer-divider">
-      <ul class="offer-includes">
-        <li>1 location / sub-account on HSP managed platform</li>
-        <li>1 core opportunities pipeline</li>
-        <li>Main intake form + up to 4 service-specific second-step forms</li>
-        <li>Instant text + email acknowledgment on every submission</li>
-        <li>Missed-call text-back automation</li>
-        <li>Tags, assignments, owner &amp; team notifications</li>
-        <li>1 follow-up workflow sequence</li>
-        <li>1 review request workflow</li>
-        <li>Form embed on your existing site or 1 landing page</li>
-        <li>Launch testing + onboarding walkthrough</li>
-      </ul>
-      <div class="offer-not">
-        Not included: custom website rebuilds · paid ads · SEO · IVR / phone trees · hiring pipeline · custom API integrations · unlimited revisions
-      </div>
-      <div style="margin-top:2rem;">
-        <a href="contact.html" class="btn-gold" style="width:100%;text-align:center;">Apply for This System</a>
-      </div>
-    </div>
-
-    <div class="fade-up">
-      <div style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;">Add-On Modules</div>
-      <div style="display:flex;flex-direction:column;gap:2px;">
-        <div class="module-card">
-          <div><div class="module-name">Reviews + Reactivation</div><div class="module-desc">Review workflow, private feedback routing, past-customer reactivation</div></div>
-          <div><div class="module-price">$1,500</div><div class="module-price-sub">one-time</div></div>
-        </div>
-        <div class="module-card">
-          <div><div class="module-name">Phone Routing / IVR</div><div class="module-desc">Call routing, after-hours logic, voicemail paths, internal alerting</div></div>
-          <div><div class="module-price">$2,000</div><div class="module-price-sub">one-time</div></div>
-        </div>
-        <div class="module-card">
-          <div><div class="module-name">Quoting + Intake</div><div class="module-desc">Deeper intake logic, quote follow-up, estimate reminders &amp; stage movement</div></div>
-          <div><div class="module-price">$2,500</div><div class="module-price-sub">one-time</div></div>
-        </div>
-        <div class="module-card">
-          <div><div class="module-name">Hiring Pipeline</div><div class="module-desc">Application intake, interview scheduling, notifications &amp; hiring handoff</div></div>
-          <div><div class="module-price">$3,500</div><div class="module-price-sub">one-time</div></div>
-        </div>
-        <div class="module-card">
-          <div><div class="module-name">Internal Ops</div><div class="module-desc">Operational alerts, handoffs, PTO requests &amp; approval workflows</div></div>
-          <div><div class="module-price">$1,500</div><div class="module-price-sub">one-time</div></div>
-        </div>
-      </div>
-      <div class="offer-note">
-        <strong>Monthly support retainers are optional.</strong> Essential ($297/mo), Growth ($597/mo), and Priority ($997/mo) tiers available.
-      </div>
-      <div style="margin-top:1.5rem;">
-        <a href="services.html" class="btn-ghost-dark">Full Service Details →</a>
-      </div>
-    </div>
+<section class="how">
+  <div class="section-eyebrow fade-up">How It Works</div>
+  <h2 class="section-h2 fade-up">From Form Fill to Booked Estimate. Automatically.</h2>
+  <p class="section-sub fade-up">No chasing. No manual follow-up. No leads falling through the cracks.</p>
+  <div class="process-row">
+    <div class="process-card fade-up"><div class="process-num">01</div><div class="process-title">Lead fills out your form</div><div class="process-desc">Multi-step forms qualify them upfront — project type, budget, timeline, photos. Tire kickers self-select out.</div></div>
+    <div class="process-card fade-up"><div class="process-num">02</div><div class="process-title">Your phone buzzes instantly</div><div class="process-desc">Text, email, and push notification within 60 seconds. You see everything before you call.</div></div>
+    <div class="process-card fade-up"><div class="process-num">03</div><div class="process-title">AI responds immediately</div><div class="process-desc">An AI assistant — trained on your business — texts them back, answers questions, and keeps them warm.</div></div>
+    <div class="process-card fade-up"><div class="process-num">04</div><div class="process-title">You show up and close</div><div class="process-desc">They already know your company. No cold start. No wasted drives. Just close the job.</div></div>
   </div>
 </section>
 
-<!-- CASE STUDY PREVIEWS -->
 <section class="cases-preview">
   <div class="section-eyebrow fade-up">Proof</div>
-  <h2 class="section-h2 fade-up">Built. Proven. Deployed.</h2>
+  <h2 class="section-h2 fade-up">Built in Real Businesses First.</h2>
+  <p class="section-sub fade-up">Every system we sell was deployed and refined inside operating companies before we ever offered it to anyone.</p>
   <div class="case-preview-grid">
     <div class="case-card fade-up">
       <div class="case-card-type">House Cleaning · West Michigan</div>
       <div class="case-card-name">Expert Cleaning Services</div>
-      <p class="case-card-body">Complete operational overhaul — marketing pipeline, hiring funnel, HR automation, review logic, and QuickBooks integration. The blueprint that became HSP Systems.</p>
-      <div class="case-card-stats">
-        <div class="case-card-stat"><div class="case-card-stat-num">&lt;2 min</div><div class="case-card-stat-label">Lead response</div></div>
-        <div class="case-card-stat"><div class="case-card-stat-num">100%</div><div class="case-card-stat-label">Hiring automated</div></div>
-      </div>
+      <p class="case-card-body">Complete operational overhaul — lead pipeline, hiring funnel, HR automation, review logic, and QuickBooks integration. The blueprint that became HSP Systems.</p>
+      <div class="case-card-stats"><div class="case-card-stat"><div class="case-card-stat-num">&lt;2 min</div><div class="case-card-stat-label">Lead response</div></div><div class="case-card-stat"><div class="case-card-stat-num">100%</div><div class="case-card-stat-label">Hiring automated</div></div></div>
       <a href="cases.html" class="case-card-link">Read Full Case Study →</a>
     </div>
     <div class="case-card fade-up">
       <div class="case-card-type">Landscaping · West Michigan</div>
       <div class="case-card-name">Wenke Landscaping</div>
-      <p class="case-card-body">Multi-service landscaping company with four service lines — each with separate routing, intake forms, and follow-up logic. Proof the model transfers across industries.</p>
-      <div class="case-card-stats">
-        <div class="case-card-stat"><div class="case-card-stat-num">4</div><div class="case-card-stat-label">Service lines routed</div></div>
-        <div class="case-card-stat"><div class="case-card-stat-num">Auto</div><div class="case-card-stat-label">All follow-up</div></div>
-      </div>
+      <p class="case-card-body">Four service lines — each with separate routing, intake forms, and follow-up logic. Proof the model transfers across industries.</p>
+      <div class="case-card-stats"><div class="case-card-stat"><div class="case-card-stat-num">4</div><div class="case-card-stat-label">Service lines routed</div></div><div class="case-card-stat"><div class="case-card-stat-num">Auto</div><div class="case-card-stat-label">All follow-up</div></div></div>
       <a href="cases.html" class="case-card-link">Read Full Case Study →</a>
     </div>
   </div>
 </section>
 
-<!-- WHY HSP -->
-<section class="why" id="why">
-  <div class="why-left fade-up">
-    <div class="section-eyebrow">Why Us</div>
-    <h2 class="section-h2 section-h2-dark">Not Just Another GHL Guy.</h2>
+<section class="why">
+  <div class="fade-up">
+    <div class="section-eyebrow">Why HSP</div>
+    <h2 class="section-h2 section-h2-dark">Not Just Another Agency.</h2>
     <div class="why-points">
-      <div class="why-point">
-        <div class="why-point-num">01</div>
-        <div>
-          <div class="why-point-title">Built in real businesses first</div>
-          <div class="why-point-desc">Every HSP system was built and proven at Expert Cleaning and Wenke Landscaping before being productized. You're not a beta test.</div>
-        </div>
-      </div>
-      <div class="why-point">
-        <div class="why-point-num">02</div>
-        <div>
-          <div class="why-point-title">Industrial engineering background</div>
-          <div class="why-point-desc">HSP is founded by an industrial engineer. We think in systems, processes, and data — not just software settings.</div>
-        </div>
-      </div>
-      <div class="why-point">
-        <div class="why-point-num">03</div>
-        <div>
-          <div class="why-point-title">You own the relationship, we own the infrastructure</div>
-          <div class="why-point-desc">Your leads, your clients, your data — all under one HSP-managed platform. White-labeled and yours.</div>
-        </div>
-      </div>
-      <div class="why-point">
-        <div class="why-point-num">04</div>
-        <div>
-          <div class="why-point-title">Modular, not bloated</div>
-          <div class="why-point-desc">Start with lead response. Add hiring, IVR, reactivation, or HR modules only when you need them.</div>
-        </div>
-      </div>
+      <div class="why-point"><div class="why-point-num">01</div><div><div class="why-point-title">Built in real businesses first</div><div class="why-point-desc">Every system was deployed at Expert Cleaning and Wenke Landscaping before being productized. You're not a beta test.</div></div></div>
+      <div class="why-point"><div class="why-point-num">02</div><div><div class="why-point-title">Industrial engineering background</div><div class="why-point-desc">We think in systems, processes, and data — not software settings and vanity metrics.</div></div></div>
+      <div class="why-point"><div class="why-point-num">03</div><div><div class="why-point-title">Your data, your clients, your leads</div><div class="why-point-desc">Everything lives on your own platform. White-labeled and yours. We manage the infrastructure.</div></div></div>
+      <div class="why-point"><div class="why-point-num">04</div><div><div class="why-point-title">We don't run ads or do SEO</div><div class="why-point-desc">We build the system that handles your leads after they come in. No overlap with your existing marketing.</div></div></div>
     </div>
   </div>
   <div class="why-right fade-up">
     <div class="why-right-label">How HSP compares</div>
     <div class="compare-row"><div class="compare-head"></div><div class="compare-head">Generic Agency</div><div class="compare-head accent">HSP Systems</div></div>
     <div class="compare-row"><div class="compare-label">Proven in real businesses</div><div class="compare-cell"><span class="compare-no">No</span></div><div class="compare-cell hsp"><span class="compare-yes">Yes</span></div></div>
-    <div class="compare-row"><div class="compare-label">Managed white-label platform</div><div class="compare-cell"><span class="compare-no">Rarely</span></div><div class="compare-cell hsp"><span class="compare-yes">Yes</span></div></div>
+    <div class="compare-row"><div class="compare-label">AI-powered follow-up</div><div class="compare-cell"><span class="compare-no">No</span></div><div class="compare-cell hsp"><span class="compare-yes">Yes</span></div></div>
     <div class="compare-row"><div class="compare-label">Multi-service routing</div><div class="compare-cell"><span class="compare-no">Extra cost</span></div><div class="compare-cell hsp"><span class="compare-yes">Included</span></div></div>
-    <div class="compare-row"><div class="compare-label">Hiring pipeline available</div><div class="compare-cell"><span class="compare-no">No</span></div><div class="compare-cell hsp"><span class="compare-yes">Add-on</span></div></div>
-    <div class="compare-row"><div class="compare-label">Fixed setup fee, no surprises</div><div class="compare-cell"><span class="compare-no">Varies</span></div><div class="compare-cell hsp"><span class="compare-yes">Always</span></div></div>
+    <div class="compare-row"><div class="compare-label">Qualifying intake forms</div><div class="compare-cell"><span class="compare-no">Basic</span></div><div class="compare-cell hsp"><span class="compare-yes">Multi-step</span></div></div>
+    <div class="compare-row"><div class="compare-label">Fixed setup, no surprises</div><div class="compare-cell"><span class="compare-no">Varies</span></div><div class="compare-cell hsp"><span class="compare-yes">Always</span></div></div>
     <div class="compare-row"><div class="compare-label">Industry: home services</div><div class="compare-cell"><span class="compare-no">Anyone</span></div><div class="compare-cell hsp"><span class="compare-yes">Specialists</span></div></div>
   </div>
 </section>
 
-<!-- CTA BAND -->
 <div class="cta-band">
-  <div>
-    <h2>Ready to Stop Losing Leads?</h2>
-    <p>Apply for a demo and we'll show you exactly what an HSP Lead Response System looks like for your specific business.</p>
-  </div>
-  <a href="contact.html" class="btn-navy">Apply Now ↗</a>
+  <div><h2>Ready to Stop Losing Jobs?</h2><p>Apply below and we'll review your current website and lead flow before reaching out. No generic pitch — we look at your setup first.</p></div>
+  <a href="#apply" class="btn-navy">See If You Qualify ↗</a>
 </div>
 
-<!-- FOOTER -->
+<section class="apply-section" id="apply">
+  <div class="apply-inner">
+    <div class="section-eyebrow fade-up">Apply</div>
+    <h2 class="section-h2 fade-up">See If This Is a Fit.</h2>
+    <p class="section-sub fade-up" style="margin-bottom:0;">We only work with businesses we can genuinely help. Takes 60 seconds.</p>
+    <!-- ═══════════════════════════════════════════════════════
+         GHL FORM/SURVEY EMBED — PASTE YOUR CODE HERE
+         
+         From GHL: Sites → Surveys → Your 2-Step Survey → Share → Embed
+         Copy the iframe/script code and paste below.
+         Then DELETE the temporary fallback form underneath.
+         
+         Example:
+         <iframe src="https://link.youragency.com/widget/survey/XXXXXX" 
+                 style="width:100%;height:600px;border:none;" 
+                 id="hsp-intake-form"></iframe>
+         ═══════════════════════════════════════════════════════ -->
+    <div class="ghl-embed-container fade-up">
+      <!-- PASTE GHL EMBED CODE HERE -->
+      
+      <!-- DELETE BELOW ONCE GHL FORM IS EMBEDDED -->
+      <div class="apply-form">
+        <div class="apply-row"><div><label class="form-label">First Name</label><input type="text" placeholder="John" class="form-input"></div><div><label class="form-label">Last Name</label><input type="text" placeholder="Smith" class="form-input"></div></div>
+        <div><label class="form-label">Business Name</label><input type="text" placeholder="Your company" class="form-input"></div>
+        <div class="apply-row"><div><label class="form-label">Email</label><input type="email" placeholder="john@company.com" class="form-input"></div><div><label class="form-label">Phone</label><input type="tel" placeholder="(616) 555-0123" class="form-input"></div></div>
+        <div><label class="form-label">Website</label><input type="text" placeholder="yourcompany.com" class="form-input"></div>
+        <div><label class="form-label">Industry</label><select class="form-input"><option value="" disabled selected>Select your industry</option><option>Landscaping / Outdoor Living</option><option>House Cleaning</option><option>Commercial Cleaning</option><option>Painting</option><option>Roofing</option><option>HVAC / Plumbing / Electrical</option><option>Remodeling / Construction</option><option>Tree Service</option><option>Pressure Washing</option><option>Junk Removal</option><option>Other Home Service</option></select></div>
+        <div><label class="form-label">Biggest problem right now?</label><textarea rows="3" placeholder="Not enough of the right leads, too many price shoppers, crews sitting around..." class="form-input"></textarea></div>
+        <button type="button" class="btn-gold" style="width:100%;text-align:center;padding:18px;">Submit Application</button>
+        <p style="font-size:12px;color:rgba(255,255,255,0.2);text-align:center;">We respond within 24 hours. No sales pitch — we review your setup first.</p>
+      </div>
+      <!-- END TEMPORARY FORM -->
+    </div>
+  </div>
+</section>
+
 <footer>
-  <div class="footer-brand">
-    <img src="logo.png" alt="HSP Systems" style="height:36px;width:auto;">
-    <div class="footer-tagline">Lead response systems for service businesses</div>
-  </div>
-  <div class="footer-links">
-    <a href="services.html">Services</a>
-    <a href="about.html">About</a>
-    <a href="cases.html">Results</a>
-    <a href="blog.html">Blog</a>
-    <a href="contact.html">Apply</a>
-  </div>
+  <div class="footer-brand"><img src="logo.png" alt="HSP Systems" style="height:36px;width:auto;"><div class="footer-tagline">Lead response systems for service businesses</div></div>
+  <div class="footer-links"><a href="about.html">About</a><a href="cases.html">Results</a><a href="landscaping.html">Landscaping</a><a href="cleaning.html">Cleaning</a><a href="privacy-policy.html">Privacy</a><a href="terms-of-service.html">Terms</a></div>
   <div class="footer-copy">© 2025 HSP Systems · Grand Haven, MI</div>
 </footer>
 
 <script>
-const io = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-}, {threshold:0.08});
-document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+const io=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:0.08});
+document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
 </script>
 </body>
 </html>
