@@ -210,5 +210,16 @@ textarea.form-input { resize:none; }
   .page-header { padding:120px 2rem 4rem; }
   .cta-band { grid-template-columns:1fr; padding:3rem 2rem; }
   footer { flex-direction:column; gap:1.5rem; padding:2rem; text-align:center; }
-  .footer-links { justify-content:center; }
+  .footer-links { justify-content:center; flex-wrap:wrap; }
+
+  /* ─── MOBILE TEXT SIZE BUMPS ─── */
+  body { font-size:16px; }
+  .section-sub, .section-sub-dark { font-size:16px; }
+  .page-header-sub { font-size:18px; }
+  .form-label { font-size:12px; }
+  .form-input { font-size:16px; padding:15px 16px; }
+  .footer-links a { font-size:13px; }
+  .footer-copy { font-size:12px; }
+  .footer-tagline { font-size:12px; }
+  .cta-band p { font-size:16px; }
 }
