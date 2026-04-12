@@ -217,9 +217,16 @@ textarea.form-input { resize:none; }
   .section-sub, .section-sub-dark { font-size:16px; }
   .page-header-sub { font-size:18px; }
   .form-label { font-size:12px; }
-  .form-input { font-size:16px; padding:15px 16px; }
+  /* 16px on form inputs prevents iOS zoom-on-focus */
+  .form-input { font-size:16px !important; padding:15px 16px; }
+  select.form-input { font-size:16px !important; }
+  textarea.form-input { font-size:16px !important; }
   .footer-links a { font-size:13px; }
   .footer-copy { font-size:12px; }
   .footer-tagline { font-size:12px; }
   .cta-band p { font-size:16px; }
+  /* Case study pages */
+  .case-story p { font-size:15px; }
+  .timeline-text { font-size:15px; }
+  .about-story-text p { font-size:16px; }
 }
