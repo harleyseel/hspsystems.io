@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Automate Hiring for Seasonal Service Crews — HSP Systems Blog</title>
+<meta name="description" content="Manual hiring eats 10+ hours a week during peak season. Application intake, screening, scheduling, and follow-up can all be automated without losing the human touch.">
+<link rel="canonical" href="https://hspsystems.io/blog/automate-seasonal-hiring.html">
+<meta property="og:title" content="How to Automate Hiring for Seasonal Service Crews">
+<meta property="og:description" content="During peak season, manual hiring eats your time at exactly the wrong moment. Here's how to build a hiring pipeline that runs without you.">
+<meta property="og:url" content="https://hspsystems.io/blog/automate-seasonal-hiring.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://hspsystems.io/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+.blog-post-section { background:var(--cream); padding:5rem; }
+.blog-post-inner { max-width:760px; margin:0 auto; }
+.blog-post-tag { font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:1rem; }
+.blog-post-meta { font-size:12px; color:rgba(90,90,90,0.6); margin-bottom:3rem; padding-bottom:2rem; border-bottom:1px solid var(--border); }
+.blog-post-body h2 { font-family:'Bebas Neue',sans-serif; font-size:32px; color:var(--navy); margin:2.5rem 0 1rem; line-height:1.1; }
+.blog-post-body h3 { font-size:18px; font-weight:500; color:var(--navy); margin:2rem 0 0.75rem; }
+.blog-post-body p { font-size:16px; color:var(--muted); line-height:1.9; margin-bottom:1.5rem; }
+.blog-post-body strong { color:var(--text); }
+.blog-post-body ul, .blog-post-body ol { padding-left:1.5rem; margin-bottom:1.5rem; }
+.blog-post-body li { font-size:16px; color:var(--muted); line-height:1.8; margin-bottom:0.5rem; }
+.blog-pullquote { border-left:4px solid var(--gold); padding:1.25rem 1.75rem; background:var(--gold-pale); margin:2.5rem 0; }
+.blog-pullquote p { font-family:'DM Serif Display',serif; font-style:italic; font-size:20px; color:var(--navy); line-height:1.6; margin-bottom:0; }
+.blog-process-list { list-style:none; padding:0; margin:2rem 0; display:flex; flex-direction:column; gap:0; }
+.blog-process-list li { display:grid; grid-template-columns:52px 1fr; padding:1.25rem 0; border-bottom:1px solid var(--border); align-items:start; }
+.blog-process-list li:first-child { border-top:1px solid var(--border); }
+.blog-process-num { font-family:'Bebas Neue',sans-serif; font-size:28px; color:var(--gold); line-height:1; }
+.blog-process-text { font-size:16px; color:var(--muted); line-height:1.8; }
+.blog-process-text strong { color:var(--text); }
+.blog-cta-box { background:var(--navy-dark); padding:3rem; margin-top:4rem; text-align:center; }
+.blog-cta-box h3 { font-family:'Bebas Neue',sans-serif; font-size:36px; color:var(--white); margin-bottom:1rem; }
+.blog-cta-box p { font-size:15px; color:rgba(255,255,255,0.5); margin-bottom:1.5rem; }
+.blog-related { background:var(--white); padding:5rem; }
+.blog-related-inner { max-width:760px; margin:0 auto; }
+.blog-related-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-top:2rem; }
+.blog-related-card { background:var(--cream); border:1px solid var(--border); padding:1.75rem; text-decoration:none; display:block; transition:border-color 0.2s; }
+.blog-related-card:hover { border-color:var(--gold); }
+.blog-related-tag { font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); margin-bottom:0.5rem; display:block; }
+.blog-related-title { font-family:'Bebas Neue',sans-serif; font-size:22px; color:var(--navy); line-height:1.1; }
+@media(max-width:1000px){
+  .blog-post-section { padding:4rem 2rem; }
+  .blog-related { padding:3rem 2rem; }
+  .blog-related-grid { grid-template-columns:1fr; }
+  .blog-process-list li { grid-template-columns:40px 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">
+    <img src="../logo.png" alt="HSP Systems" class="nav-logo-img">
+  </a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links">
+    <a href="../about.html">About</a>
+    <a href="../services.html">Services</a>
+    <a href="../cases.html">Results</a>
+    <a href="../landscaping.html">Landscaping</a>
+    <a href="../cleaning.html">Cleaning</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../index.html#apply" class="nav-cta">See If You Qualify</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-grid"></div>
+  <div class="page-header-inner">
+    <div class="section-eyebrow">Hiring</div>
+    <h1>How to Automate Hiring<br><em>for Seasonal Service Crews</em></h1>
+    <p class="page-header-sub">Manual hiring eats 10+ hours a week during peak season. Here's how to build a pipeline that runs without you.</p>
+  </div>
+</div>
+
+<section class="blog-post-section">
+  <div class="blog-post-inner">
+    <span class="blog-post-tag">Hiring · 6 min read</span>
+    <div class="blog-post-meta">By HSP Systems · April 2025</div>
+
+    <div class="blog-post-body">
+
+      <p>Every spring, landscaping companies go through the same thing. Jobs start booking. The schedule fills up. And then the panic sets in: there aren't enough people to do the work.</p>
+
+      <p>Cleaning companies hit the same wall — usually when a commercial contract comes in that requires more staff than you currently have. Suddenly hiring is urgent, and urgent hiring is messy hiring.</p>
+
+      <p>The problem is not that service businesses can't find workers. The problem is that the hiring process itself is unstructured and manual. Applications come in through text, Facebook, a form on the website, a job board. Screening is ad-hoc. Interviews get scheduled by text threads. Follow-up happens when someone remembers to do it.</p>
+
+      <p>Good candidates get lost. You hire people you shouldn't because you're rushed. The process takes more time than it should at exactly the moment when your time is most scarce.</p>
+
+      <h2>What an Automated Hiring Pipeline Actually Looks Like</h2>
+
+      <p>An automated hiring pipeline doesn't mean robots interviewing people. It means every step from application intake to interview to onboarding handoff has a defined process that moves without manual intervention.</p>
+
+      <p>Here's what the stages look like in a well-built system:</p>
+
+      <ul class="blog-process-list">
+        <li>
+          <span class="blog-process-num">01</span>
+          <div class="blog-process-text"><strong>Application intake via form.</strong> A structured application form captures role interest, availability, relevant experience, and contact info. The form itself screens out candidates who don't match your minimum criteria — you never see applications from people who can't work your hours or don't have a valid license if that's required.</div>
+        </li>
+        <li>
+          <span class="blog-process-num">02</span>
+          <div class="blog-process-text"><strong>Instant acknowledgment.</strong> The moment someone submits an application, they get an automated text confirmation. This alone reduces ghosting significantly — candidates who hear nothing often assume the application was lost and move on. A quick "We got your application — someone will be in touch within 48 hours" holds them in the pipeline.</div>
+        </li>
+        <li>
+          <span class="blog-process-num">03</span>
+          <div class="blog-process-text"><strong>Team notification and pipeline entry.</strong> The application lands in a hiring pipeline in your CRM — not in an email inbox that gets buried. A notification goes to whoever manages hiring. They see the applicant's details before they do anything else.</div>
+        </li>
+        <li>
+          <span class="blog-process-num">04</span>
+          <div class="blog-process-text"><strong>Automated interview scheduling.</strong> Rather than a back-and-forth text thread, the system sends candidates a scheduling link and they pick a time from available slots. No one has to coordinate manually. The interview is on the calendar for both parties with confirmation and reminder texts sent automatically.</div>
+        </li>
+        <li>
+          <span class="blog-process-num">05</span>
+          <div class="blog-process-text"><strong>Post-interview follow-up.</strong> Whether you're moving forward or not, the system handles the follow-up. Offers, next steps, or a polite decline — all templated and sent without someone having to draft a message. This sounds small but it's where most pipelines break down during busy season.</div>
+        </li>
+        <li>
+          <span class="blog-process-num">06</span>
+          <div class="blog-process-text"><strong>Onboarding handoff.</strong> Once someone is hired, the system triggers the onboarding workflow — documents to sign, orientation scheduling, first-day details. This doesn't require your attention until they show up on day one ready to work.</div>
+        </li>
+      </ul>
+
+      <h2>Why This Matters More Than You Think</h2>
+
+      <p>Automating hiring isn't just about saving time, though it does save a significant amount. It's about consistency. Manual hiring is inconsistent by nature — the process changes depending on how busy you are, who is handling it, and how much attention they can give to it that week.</p>
+
+      <div class="blog-pullquote">
+        <p>Manual hiring is inconsistent by nature. The pipeline breaks down exactly when you need it most.</p>
+      </div>
+
+      <p>An automated pipeline is the same every time. Every applicant gets the same intake process. Every qualified candidate gets the same follow-up. The screening criteria don't change based on how desperate you are this week. You end up with better hires because the process isn't rushed.</p>
+
+      <h2>What We Built at Expert Cleaning Services</h2>
+
+      <p>The hiring pipeline HSP now offers was built inside <a href="../cases.html">Expert Cleaning Services</a> — a cleaning company operating three service lines across West Michigan. Before the system was in place, hiring was a text-thread operation. Applications came through Facebook. Screening was informal. Good candidates fell through because nobody remembered to follow up.</p>
+
+      <p>After the build, every application triggered the same automated process: intake, acknowledgment, scoring, scheduling, follow-up. The owner stopped spending hours a week managing hiring. The hiring pipeline ran during busy season the same way it ran during slow season — without attention, without urgency, without chaos.</p>
+
+      <p>That same pipeline is now available for your business. If your hiring process depends on someone remembering to do things, it's worth looking at what a structured system would change.</p>
+
+      <p>If you want to see this applied to your specific business and crew structure, apply below and we'll scope it for you.</p>
+
+    </div>
+
+    <div class="blog-cta-box">
+      <h3>Stop Losing Good Applicants to a Broken Process</h3>
+      <p>We build hiring pipelines alongside lead response systems — fully integrated, fully automated. Apply and we'll scope the right build for your business.</p>
+      <a href="../index.html#apply" class="btn-gold">See If You Qualify →</a>
+    </div>
+  </div>
+</section>
+
+<section class="blog-related">
+  <div class="blog-related-inner">
+    <div class="section-eyebrow">Keep Reading</div>
+    <div class="blog-related-grid">
+      <a href="expert-cleaning-build.html" class="blog-related-card">
+        <span class="blog-related-tag">Case Study</span>
+        <div class="blog-related-title">From Zero Systems to Full Automation: The Expert Cleaning Build</div>
+      </a>
+      <a href="crm-vs-system.html" class="blog-related-card">
+        <span class="blog-related-tag">Systems</span>
+        <div class="blog-related-title">CRM vs. Actual System: What Service Businesses Actually Need</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand"><img src="../logo-banner.png" alt="HSP Systems" style="max-width:160px;height:auto;border-radius:6px;"><div class="footer-tagline">Lead response systems for service businesses</div></div>
+  <div class="footer-links">
+    <a href="../about.html">About</a>
+    <a href="../services.html">Services</a>
+    <a href="../cases.html">Results</a>
+    <a href="../landscaping.html">Landscaping</a>
+    <a href="../cleaning.html">Cleaning</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../privacy-policy.html">Privacy</a>
+    <a href="../terms-of-service.html">Terms</a>
+  </div>
+  <div class="footer-copy">&copy; 2025 HSP Systems &middot; Grand Haven, MI</div>
+</footer>
+
+<script>
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:0.08});
+document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
