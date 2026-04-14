@@ -128,14 +128,14 @@
   display:flex; flex-direction:column; gap:0;
 }
 .timeline-item {
-  display:grid; grid-template-columns:120px 1fr;
+  display:grid; grid-template-columns:150px 1fr;
   border-bottom:1px solid var(--border);
   padding:1.75rem 0;
 }
 .timeline-item:first-child { border-top:1px solid var(--border); }
 .timeline-year {
-  font-family:'Bebas Neue',sans-serif; font-size:28px;
-  color:var(--gold);
+  font-family:'Bebas Neue',sans-serif; font-size:22px;
+  color:var(--gold); line-height:1.3;
 }
 .timeline-text { font-size:14px; color:var(--muted); line-height:1.8; }
 .timeline-text strong { color:var(--navy); }
@@ -148,7 +148,7 @@
   .values { padding:4rem 2rem; }
   .values-grid { grid-template-columns:1fr; }
   .origin { padding:4rem 2rem; }
-  .timeline-item { grid-template-columns:80px 1fr; }
+  .timeline-item { grid-template-columns:100px 1fr; }
   .about-story-text h2 { font-size:28px; }
 }
 </style>
@@ -187,10 +187,11 @@
 <section class="about-story">
   <div class="about-story-text fade-up">
     <h2>The Origin Story</h2>
-    <p>HSP Systems started at <strong>Expert Cleaning Services</strong> — a service business in West Michigan with three core service lines the engine had to support: residential cleaning, commercial cleaning, and post-construction cleaning. Harley Seelbinder was brought in to build the operational backbone behind those services — lead capture, follow-up automation, hiring automation, HR workflows, review systems, quoting logic, and QuickBooks-connected processes.</p>
-    <p>Because the business served multiple service types, the system had to do more than collect leads. It had to route the right inquiries, support different intake paths, handle different job types, and create operational consistency behind the scenes. What began as an internal operations build quickly became something bigger.</p>
-    <p>Then the model was deployed at <strong>Wenke Landscaping</strong>, where the same systems thinking was adapted across multiple service lines. Different industry, different workflow — same result: cleaner routing, faster response, stronger follow-up, and less dependence on memory and manual admin work.</p>
-    <p>That is when HSP Systems became a product, not just a project. Every system we sell has been built, tested, and refined in real businesses before it ever reaches a client.</p>
+    <p>HSP Systems started with a family business problem. <strong>Expert Cleaning Services</strong> is a cleaning company in West Michigan run by Harley Seelbinder's mom — and like a lot of owner-operated service businesses, it ran on paper, memory, and the owner being involved in every step. Leads came in through a generic contact form and got followed up on whenever someone had a minute. Hiring was a text-thread operation. HR lived in spreadsheets. Nothing ran without her.</p>
+    <p>Harley, fresh off an Industrial &amp; Systems Engineering degree and wired to find the broken thing in any operation, went in and rebuilt it from the ground up. The goal was simple: build a system so well-configured that the team could run it while she was asleep. Not just a CRM. A complete operational engine — lead intake across three service lines (residential, commercial, and post-construction), instant follow-up, hiring automation, HR workflows, review collection, and QuickBooks-connected back office.</p>
+    <p>The stack wasn't rigid. Whatever the business needed — <strong>Jobber</strong> for field management, GoHighLevel for CRM and automation, QuickBooks for finance — the system was built to connect it all and make it run together. Software is the tool. The system is the thing that matters.</p>
+    <p>What started as a fix for one family business became the blueprint for HSP. Then the model was proven again at <strong>Wenke Landscaping</strong> — a completely different industry, multiple service lines, same result: faster response, cleaner routing, less chaos, more revenue captured from the leads already coming in.</p>
+    <p>That is when HSP Systems became a product. Every system we sell has been built, tested, and refined in a real operating business first.</p>
   </div>
   <div class="about-sidebar fade-up">
     <div class="about-sidebar-label">HSP at a glance</div>
@@ -228,15 +229,14 @@
     </div>
   </div>
   <div class="founder-text fade-up">
-    <h2>The Founder</h2>
-    <p>HSP Systems was founded by <strong>Harley Seelbinder</strong>, an industrial/systems engineer and business operator based in West Michigan.</p>
-    <p>Harley's background is not in selling software for the sake of software. It is in studying how businesses actually run, finding where things break, and designing systems that remove bottlenecks. His work is grounded in operations, process design, automation, and measurable outcomes.</p>
-    <p>He has spent years inside service businesses — not above them. That matters. HSP was built by someone who understands what it feels like when leads go cold, hiring falls apart, admin work piles up, and growth creates chaos instead of momentum.</p>
+    <h2>Harley Seelbinder</h2>
+    <p>Harley holds a degree in <strong>Industrial &amp; Systems Engineering</strong> — which is a formal way of saying he's trained to look at any operation, find where it breaks, and redesign the process to run without the inefficiencies. That's not a software skill. It's a thinking skill that happens to apply extremely well to service businesses.</p>
+    <p>He's not someone who learned business automation from a YouTube course and started an agency. He rebuilt his mom's cleaning company from a paper operation into a software-fueled system that her team can run while she sleeps. That took years, real stakes, and a lot of trial and error on a live business. The result was a system that ran itself — leads handled automatically, hiring running in the background, HR processes that didn't require her to remember anything.</p>
     <blockquote>
-      <p>Built by Harley Seelbinder, an industrial/systems engineer who works inside real service businesses — not outside them.</p>
+      <p>The goal was a system so well-built that the team could run it while she was asleep. That's still the standard for every build we do.</p>
     </blockquote>
-    <p>That perspective shapes everything HSP builds. The goal is never to add more tools. The goal is to build infrastructure that makes the business easier to run, easier to scale, and less dependent on the owner being involved in every step.</p>
-    <p>HSP is based in <strong>Grand Haven, Michigan</strong> and works primarily with service businesses across West Michigan — though the systems themselves can be deployed anywhere.</p>
+    <p>Then he took the same thinking to Wenke Landscaping — a completely different business, multiple service lines, different customers, different workflows — and proved the model transferred. Same principles. Same result. A business that responds faster, loses fewer leads, and depends less on the owner being in the middle of everything.</p>
+    <p>HSP is based in <strong>Grand Haven, Michigan</strong> and works primarily with service businesses across West Michigan — though the systems work anywhere.</p>
   </div>
 </section>
 
@@ -284,16 +284,16 @@
   <h2 class="section-h2 section-h2-dark fade-up">How We Got Here</h2>
   <div class="origin-timeline">
     <div class="timeline-item fade-up">
-      <div class="timeline-year">2023</div>
-      <div class="timeline-text"><strong>Expert Cleaning Services.</strong> Full operational build across three core service lines — residential cleaning, commercial cleaning, and post-construction. CRM, lead routing, hiring automation, HR workflows, review systems, quoting support, and QuickBooks-connected processes were built from scratch inside a live business. This was the blueprint that became HSP Systems.</div>
-    </div>
-    <div class="timeline-item fade-up">
-      <div class="timeline-year">2024</div>
-      <div class="timeline-text"><strong>Wenke Landscaping.</strong> Multi-service deployment: separate intake paths, service-specific routing, hiring pipeline, phone system logic, and booking workflows. Different industry, same result. This proved the HSP model could transfer across industries.</div>
+      <div class="timeline-year">2019–2025</div>
+      <div class="timeline-text"><strong>Expert Cleaning Services.</strong> Multi-year operational build across three core service lines — residential cleaning, commercial cleaning, and post-construction. Lead intake, instant follow-up, hiring automation, HR workflows, review collection, Jobber integration, QuickBooks sync, and full CRM pipeline — all built from scratch inside a live, growing business. The blueprint that became HSP Systems.</div>
     </div>
     <div class="timeline-item fade-up">
       <div class="timeline-year">2025</div>
-      <div class="timeline-text"><strong>HSP Systems launches.</strong> The internal operating engine becomes a client-facing product: modular lead response and operational systems for estimate-based service businesses across West Michigan and beyond.</div>
+      <div class="timeline-text"><strong>Wenke Landscaping.</strong> Full deployment across multiple service lines — separate intake paths, service-specific routing, hiring pipeline, phone system logic, and booking workflows. Different industry, same systems thinking. Confirmed the model transfers.</div>
+    </div>
+    <div class="timeline-item fade-up">
+      <div class="timeline-year">2026</div>
+      <div class="timeline-text"><strong>HSP Systems launches.</strong> The internal operating engine becomes a client-facing product. Modular lead response and operational systems for estimate-based service businesses — built on the same infrastructure that runs two real West Michigan companies today.</div>
     </div>
   </div>
 </section>
