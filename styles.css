@@ -160,7 +160,7 @@ footer {
   display:flex; justify-content:space-between; align-items:center;
   border-top:1px solid rgba(200,145,42,0.15);
 }
-.footer-brand { display:flex; flex-direction:column; gap:4px; }
+.footer-brand { display:flex; flex-direction:column; gap:4px; max-width:180px; }
 .footer-name {
   font-family:'Bebas Neue',sans-serif; font-size:22px;
   letter-spacing:0.1em; color:var(--white);
