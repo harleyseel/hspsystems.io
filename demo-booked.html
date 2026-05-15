@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're Booked — HSP Systems</title>
+<meta name="description" content="Your HSP Systems demo is confirmed. Here's what happens next.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.booked-hero{background:var(--navy-dark);padding:120px 2rem 5rem;text-align:center}
+.booked-check{font-size:60px;font-weight:700;color:var(--gold);line-height:1;margin-bottom:1.5rem}
+.booked-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,6vw,72px);line-height:1.05;color:var(--white);margin-bottom:1.25rem}
+.booked-sub{font-size:16px;color:rgba(255,255,255,0.45);line-height:1.8;max-width:560px;margin:0 auto}
+.prep-section{background:var(--navy);padding:5rem 2rem}
+.prep-inner{max-width:760px;margin:0 auto}
+.prep-steps{display:flex;flex-direction:column;gap:16px;margin-top:2.5rem}
+.prep-step{border-left:3px solid var(--gold);padding:1.5rem 1.75rem;background:rgba(255,255,255,0.03)}
+.prep-step-title{font-size:15px;font-weight:500;color:var(--white);margin-bottom:6px}
+.prep-step-body{font-size:14px;color:rgba(255,255,255,0.45);line-height:1.7}
+.harley-section{background:var(--navy-dark);padding:5rem 2rem}
+.harley-inner{max-width:700px;margin:0 auto;display:flex;gap:2.5rem;align-items:flex-start}
+.harley-text{flex:1}
+.harley-name{font-size:17px;font-weight:500;color:var(--white);margin-bottom:4px}
+.harley-title{font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:1.25rem}
+.harley-quote{font-size:15px;color:rgba(255,255,255,0.5);line-height:1.8;font-style:italic}
+.stats-strip{background:var(--gold);padding:3rem 2rem;display:flex;justify-content:center;gap:4rem;flex-wrap:wrap;text-align:center}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:1;color:var(--navy-dark)}
+.stat-label{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(28,46,92,0.65);margin-top:4px}
+.booked-cta{background:var(--navy);padding:4rem 2rem;text-align:center}
+.booked-cta p{font-size:15px;color:rgba(255,255,255,0.4);margin-bottom:1rem}
+.booked-cta a{color:var(--gold);text-decoration:none;font-size:15px;font-weight:500}
+.booked-cta a:hover{text-decoration:underline}
+@media(max-width:600px){
+  .harley-inner{flex-direction:column;align-items:center;text-align:center}
+  .stats-strip{gap:2.5rem}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-brand"><img src="logo.png" alt="HSP Systems" class="nav-logo-img"></a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></button>
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="cases.html">Results</a>
+    <a href="landscaping.html">Landscaping</a>
+    <a href="cleaning.html">Cleaning</a>
+    <a href="blog.html">Blog</a>
+    <a href="index.html#apply" class="nav-cta">See If You Qualify</a>
+  </div>
+</nav>
+
+<section class="booked-hero">
+  <div class="booked-check">✓</div>
+  <h1 class="booked-h1">You're Booked. Here's What Happens Next.</h1>
+  <p class="booked-sub">Harley will review your website and current lead setup before the call. Show up and you'll leave knowing exactly what to automate first — and what it costs.</p>
+</section>
+
+<section class="prep-section">
+  <div class="prep-inner">
+    <div class="section-eyebrow">Before The Call</div>
+    <h2 class="section-h2">Three Things To Know.</h2>
+    <div class="prep-steps">
+      <div class="prep-step">
+        <div class="prep-step-title">Step 1 — Check Your Email</div>
+        <div class="prep-step-body">Your calendar invite is on its way. Add it to your calendar so you don't miss it.</div>
+      </div>
+      <div class="prep-step">
+        <div class="prep-step-title">Step 2 — We Do Our Homework</div>
+        <div class="prep-step-body">Before the call, we'll pull up your website, check your lead flow, and find the leaks. You won't need to explain much.</div>
+      </div>
+      <div class="prep-step">
+        <div class="prep-step-title">Step 3 — Show Up Ready</div>
+        <div class="prep-step-body">Think about where your biggest time drain is right now. That's where we'll start.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="harley-section">
+  <div class="harley-inner">
+    <img src="https://hspsystems.io/harley.jpg" alt="Harley Seelbinder, founder of HSP Systems" style="width:140px;height:140px;border-radius:50%;object-fit:cover;border:3px solid #C8912A;flex-shrink:0;">
+    <div class="harley-text">
+      <div class="harley-name">Harley Seelbinder</div>
+      <div class="harley-title">Founder, HSP Systems</div>
+      <p class="harley-quote">"I built this system inside my mom's cleaning company so she could stop doing the work that was keeping her from retiring. Same system, same result every time. See you on the call."</p>
+    </div>
+  </div>
+</section>
+
+<div class="stats-strip">
+  <div><div class="stat-num">&lt;2 min</div><div class="stat-label">Average lead response time</div></div>
+  <div><div class="stat-num">100%</div><div class="stat-label">Hiring automated at Expert Cleaning</div></div>
+  <div><div class="stat-num">14 days</div><div class="stat-label">Average build-to-launch</div></div>
+</div>
+
+<div class="booked-cta">
+  <p>Know someone else who could use this?</p>
+  <a href="https://hspsystems.io">Share the audit →</a>
+</div>
+
+<footer>
+  <div class="footer-brand"><img src="logo-banner.png" alt="HSP Systems" style="max-width:160px;height:auto;border-radius:6px;"><div class="footer-tagline">Lead response systems for service businesses</div></div>
+  <div class="footer-links">
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="cases.html">Results</a>
+    <a href="landscaping.html">Landscaping</a>
+    <a href="cleaning.html">Cleaning</a>
+    <a href="blog.html">Blog</a>
+    <a href="privacy-policy.html">Privacy</a>
+    <a href="terms-of-service.html">Terms</a>
+  </div>
+  <div class="footer-copy">© <script>document.write(new Date().getFullYear())</script> HSP Systems LLC · Grand Haven, MI</div>
+</footer>
+
+<!-- GOOGLE ADS CONVERSION — uncomment and replace AW-XXXXXXXXX when ready
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-XXXXXXXXX');
+  gtag('event', 'conversion', {'send_to': 'AW-XXXXXXXXX/XXXXXXXXXXX'});
+</script>
+-->
+
+<!-- META PIXEL — uncomment and replace PIXEL_ID when ready
+<script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'PIXEL_ID');
+  fbq('track', 'Schedule');
+</script>
+-->
+
+</body>
+</html>

@@ -89,18 +89,25 @@
 .compare-label{padding:0.875rem 0;font-size:13px;color:rgba(255,255,255,0.35);text-align:left}
 .compare-yes{color:var(--gold-light);font-weight:500}
 .compare-no{color:rgba(255,255,255,0.2)}
-.apply-section{background:var(--navy-dark);padding:6rem 5rem}
-.apply-inner{max-width:640px;margin:0 auto}
-.apply-form{display:flex;flex-direction:column;gap:12px;margin-top:2rem}
-.apply-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.ghl-embed-container{margin-top:2rem;min-height:400px}
+/* 2-step inline form */
+.inline-form-section{background:var(--navy);padding:5rem 2rem}
+.inline-form-inner{max-width:600px;margin:0 auto;text-align:center}
+.inline-form-h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(30px,5vw,50px);line-height:1.05;color:var(--white);margin-bottom:1rem}
+.inline-form-sub{font-size:15px;color:rgba(255,255,255,0.45);line-height:1.7;margin-bottom:2rem}
+.twostep-form{text-align:left}
+.form-field{margin-bottom:12px;position:relative}
+.field-error{color:#ff6b6b;font-size:12px;margin-top:4px;display:none}
+.step2-wrap{max-height:0;overflow:hidden;transition:max-height 0.55s ease}
+.step2-wrap.open{max-height:1400px}
+.step2-inner{padding-top:20px;border-top:1px solid rgba(255,255,255,0.08);margin-top:8px}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-6px)}80%{transform:translateX(6px)}}
+.shake{animation:shake 0.4s ease}
 @media(max-width:1000px){
   .hero{padding:100px 2rem 4rem}.hero-proof{display:none}
   .pain-strip{flex-direction:column;padding:0 2rem}.pain-item{border-right:none;border-bottom:1px solid rgba(28,46,92,0.15)}
-  .niche-router,.how,.cases-preview,.why,.apply-section{padding:4rem 2rem}
+  .niche-router,.how,.cases-preview,.why{padding:4rem 2rem}
   .niche-grid,.case-preview-grid,.why{grid-template-columns:1fr}
   .process-row{grid-template-columns:1fr 1fr}
-  .apply-row{grid-template-columns:1fr}
 }
 @media(max-width:600px){
   .process-row{grid-template-columns:1fr}
@@ -140,6 +147,73 @@
     <div class="proof-card"><div class="proof-num">&lt;2 min</div><div class="proof-label">Average lead response time</div></div>
     <div class="proof-card"><div class="proof-num">100%</div><div class="proof-label">Missed calls followed up automatically</div></div>
     <div class="proof-card"><div class="proof-num">$0</div><div class="proof-label">Spent on additional office staff</div></div>
+  </div>
+</section>
+
+<section class="inline-form-section" id="apply">
+  <div class="inline-form-inner">
+    <h2 class="inline-form-h2">Find Out What's Costing You Jobs This Week.</h2>
+    <p class="inline-form-sub">Tell us your industry. Takes 60 seconds — we review your setup before we ever reach out. No pitch.</p>
+    <form id="hsp-apply-form" class="twostep-form" novalidate>
+      <div id="step1">
+        <div class="form-field">
+          <input id="s1_first_name" type="text" placeholder="First name" class="form-input" autocomplete="given-name">
+        </div>
+        <div class="form-field">
+          <input id="s1_email" type="email" placeholder="Work email" class="form-input" autocomplete="email">
+          <div id="email-error" class="field-error"></div>
+        </div>
+        <div class="form-field">
+          <select id="s1_industry" class="form-input" autocomplete="off">
+            <option value="" disabled selected>Select your industry</option>
+            <option>Landscaping / Outdoor Living</option>
+            <option>House Cleaning</option>
+            <option>Commercial Cleaning</option>
+            <option>Painting</option>
+            <option>Roofing</option>
+            <option>HVAC / Plumbing / Electrical</option>
+            <option>Remodeling / Construction</option>
+            <option>Tree Service</option>
+            <option>Pressure Washing</option>
+            <option>Junk Removal</option>
+            <option>Sign Company / Signage</option>
+            <option>Medical Office</option>
+            <option>Dental Office</option>
+            <option>Eye Care / Optometry</option>
+            <option>Chiropractic / Physical Therapy</option>
+            <option>Veterinary</option>
+            <option>Salon / Spa / Beauty</option>
+            <option>Auto Repair / Detailing</option>
+            <option>Property Management</option>
+            <option>Other Home Service</option>
+            <option>Other Business</option>
+          </select>
+        </div>
+        <button type="button" id="step1-btn" class="btn-gold" style="width:100%;text-align:center;padding:18px;">Show Me Where I'm Losing Leads →</button>
+      </div>
+      <div id="step2" class="step2-wrap">
+        <div class="step2-inner">
+          <div class="form-field">
+            <input id="s2_last_name" type="text" placeholder="Last name" class="form-input" autocomplete="family-name">
+          </div>
+          <div class="form-field">
+            <input id="s2_phone" type="tel" placeholder="(616) 555-0123" class="form-input" autocomplete="tel">
+          </div>
+          <div class="form-field">
+            <input id="s2_business_name" type="text" placeholder="Business name" class="form-input" autocomplete="organization">
+          </div>
+          <div class="form-field">
+            <input id="s2_website" type="text" placeholder="yourcompany.com" class="form-input" autocomplete="url">
+          </div>
+          <div class="form-field">
+            <textarea id="s2_message" rows="3" placeholder="Biggest problem right now?" class="form-input" autocomplete="off"></textarea>
+          </div>
+          <button type="submit" class="btn-gold" style="width:100%;text-align:center;padding:18px;">Get My Free Audit →</button>
+          <div id="form-status" style="display:none;"></div>
+          <p style="font-size:12px;color:rgba(255,255,255,0.2);text-align:center;margin-top:8px;">We respond within 24 hours. No sales pitch.</p>
+        </div>
+      </div>
+    </form>
   </div>
 </section>
 
@@ -230,46 +304,9 @@
 </section>
 
 <div class="cta-band">
-  <div><h2>Ready to Stop Losing Jobs?</h2><p>Apply below and we'll review your current website and lead flow before reaching out. No generic pitch — we look at your setup first.</p></div>
+  <div><h2>Ready to Stop Losing Jobs?</h2><p>Tell us your industry above and we'll review your current website and lead flow before reaching out. No generic pitch — we look at your setup first.</p></div>
   <a href="#apply" class="btn-navy">See If You Qualify ↗</a>
 </div>
-
-<section class="apply-section" id="apply">
-  <div class="apply-inner">
-    <div class="section-eyebrow fade-up">Apply</div>
-    <h2 class="section-h2 fade-up">See If This Is a Fit.</h2>
-    <p class="section-sub fade-up" style="margin-bottom:0;">We only work with businesses we can genuinely help. Takes 60 seconds.</p>
-    <!-- ═══════════════════════════════════════════════════════
-         GHL FORM/SURVEY EMBED — PASTE YOUR CODE HERE
-         
-         From GHL: Sites → Surveys → Your 2-Step Survey → Share → Embed
-         Copy the iframe/script code and paste below.
-         Then DELETE the temporary fallback form underneath.
-         
-         Example:
-         <iframe src="https://link.youragency.com/widget/survey/XXXXXX" 
-                 style="width:100%;height:600px;border:none;" 
-                 id="hsp-intake-form"></iframe>
-         ═══════════════════════════════════════════════════════ -->
-    <div class="ghl-embed-container fade-up">
-      <!-- PASTE GHL EMBED CODE HERE -->
-      
-      <!-- DELETE BELOW ONCE GHL FORM IS EMBEDDED -->
-      <form id="hsp-apply-form" class="apply-form">
-        <div class="apply-row"><div><label class="form-label">First Name</label><input id="first_name" type="text" placeholder="John" class="form-input" autocomplete="given-name"></div><div><label class="form-label">Last Name</label><input id="last_name" type="text" placeholder="Smith" class="form-input" autocomplete="family-name"></div></div>
-        <div><label class="form-label">Business Name</label><input id="business_name" type="text" placeholder="Your company" class="form-input" autocomplete="organization"></div>
-        <div class="apply-row"><div><label class="form-label">Email</label><input id="email" type="email" placeholder="john@company.com" class="form-input" autocomplete="email"></div><div><label class="form-label">Phone</label><input id="phone" type="tel" placeholder="(616) 555-0123" class="form-input" autocomplete="tel"></div></div>
-        <div><label class="form-label">Website</label><input id="website" type="text" placeholder="yourcompany.com" class="form-input" autocomplete="url"></div>
-        <div><label class="form-label">Industry</label><select id="industry" class="form-input" autocomplete="off"><option value="" disabled selected>Select your industry</option><option>Landscaping / Outdoor Living</option><option>House Cleaning</option><option>Commercial Cleaning</option><option>Painting</option><option>Roofing</option><option>HVAC / Plumbing / Electrical</option><option>Remodeling / Construction</option><option>Tree Service</option><option>Pressure Washing</option><option>Junk Removal</option><option>Other Home Service</option></select></div>
-        <div><label class="form-label">Biggest problem right now?</label><textarea id="message" rows="3" placeholder="Not enough of the right leads, too many price shoppers, crews sitting around..." class="form-input" autocomplete="off"></textarea></div>
-        <button type="submit" class="btn-gold" style="width:100%;text-align:center;padding:18px;">Submit Application</button>
-        <div id="form-status" style="display:none"></div>
-        <p style="font-size:12px;color:rgba(255,255,255,0.2);text-align:center;">We respond within 24 hours. No sales pitch — we review your setup first.</p>
-      </form>
-      <!-- END TEMPORARY FORM -->
-    </div>
-  </div>
-</section>
 
 <footer>
   <div class="footer-brand"><img src="logo-banner.png" alt="HSP Systems" style="max-width:160px;height:auto;border-radius:6px;"><div class="footer-tagline">Lead response systems for service businesses</div></div>
@@ -291,69 +328,148 @@ const io=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.targe
 document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
 </script>
 <script>
-document.getElementById('hsp-apply-form').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const btn = this.querySelector('button[type="submit"]');
-  const status = document.getElementById('form-status');
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  status.style.display = 'none';
-  const data = {
-    firstName: document.getElementById('first_name')?.value?.trim() || '',
-    lastName: document.getElementById('last_name')?.value?.trim() || '',
-    email: document.getElementById('email')?.value?.trim() || '',
-    phone: document.getElementById('phone')?.value?.replace(/\D/g,'') || '',
-    companyName: document.getElementById('business_name')?.value?.trim() || '',
-    website: document.getElementById('website')?.value?.trim() || '',
-    industry: document.getElementById('industry')?.value?.trim() || '',
-    message: document.getElementById('message')?.value?.trim() || ''
-  };
-  try {
-    const res = await fetch('https://hsp-forms.harley-b13.workers.dev/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
-    const result = await res.json();
-    if (result.success) {
-      status.textContent = "Thanks — we'll review your setup and reach out within 24 hours.";
-      status.style.cssText = 'display:block;color:#C8912A;font-size:14px;margin-top:12px;font-family:inherit;';
-      this.reset();
+(function() {
+  var LS = 'hsp_';
+  var fields = ['s1_first_name','s1_email','s1_industry','s2_last_name','s2_phone','s2_business_name','s2_website','s2_message'];
+
+  // Restore saved values on load
+  fields.forEach(function(id) {
+    var el = document.getElementById(id);
+    var val = localStorage.getItem(LS + id);
+    if (el && val) el.value = val;
+  });
+
+  // Open step 2 if user previously reached it
+  if (localStorage.getItem(LS + 's2_last_name') || localStorage.getItem(LS + 's2_phone')) {
+    document.getElementById('step2').classList.add('open');
+  }
+
+  // Save on input/change
+  fields.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('input', function() { localStorage.setItem(LS + id, this.value); });
+    el.addEventListener('change', function() { localStorage.setItem(LS + id, this.value); });
+  });
+
+  // Email validation on blur
+  document.getElementById('s1_email').addEventListener('blur', function() {
+    var val = this.value.trim();
+    var err = document.getElementById('email-error');
+    var valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+    if (val && !valid) {
+      err.textContent = 'Please enter a valid email address.';
+      err.style.display = 'block';
     } else {
-      throw new Error('failed');
+      err.textContent = '';
+      err.style.display = 'none';
     }
-  } catch(err) {
-    status.textContent = 'Something went wrong — email us at harley@hspsystems.io';
-    status.style.cssText = 'display:block;color:#ff6b6b;font-size:14px;margin-top:12px;font-family:inherit;';
-  }
-  btn.textContent = 'Submit Application';
-  btn.disabled = false;
-});
+  });
 
-document.getElementById('phone').addEventListener('input', function() {
-  let val = this.value.replace(/\D/g, '').substring(0, 10);
-  if(val.length >= 7) {
-    val = '(' + val.substring(0,3) + ') ' + val.substring(3,6) + '-' + val.substring(6);
-  } else if(val.length >= 4) {
-    val = '(' + val.substring(0,3) + ') ' + val.substring(3);
-  } else if(val.length > 0) {
-    val = '(' + val;
-  }
-  this.value = val;
-});
+  // Phone formatting
+  document.getElementById('s2_phone').addEventListener('input', function() {
+    var val = this.value.replace(/\D/g, '').substring(0, 10);
+    if (val.length >= 7) {
+      val = '(' + val.substring(0,3) + ') ' + val.substring(3,6) + '-' + val.substring(6);
+    } else if (val.length >= 4) {
+      val = '(' + val.substring(0,3) + ') ' + val.substring(3);
+    } else if (val.length > 0) {
+      val = '(' + val;
+    }
+    this.value = val;
+    localStorage.setItem(LS + 's2_phone', val);
+  });
 
-document.getElementById('email').addEventListener('blur', function() {
-  const val = this.value.trim();
-  let err = document.getElementById('email-error');
-  if(!err) {
-    err = document.createElement('div');
-    err.id = 'email-error';
-    err.style.cssText = 'color:#ff6b6b;font-size:12px;margin-top:4px;';
-    this.parentNode.appendChild(err);
-  }
-  const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
-  err.textContent = val && !valid ? 'Please enter a valid email address.' : '';
-});
+  // Step 1 — next button
+  document.getElementById('step1-btn').addEventListener('click', function() {
+    var fn = document.getElementById('s1_first_name').value.trim();
+    var em = document.getElementById('s1_email').value.trim();
+    var ind = document.getElementById('s1_industry').value;
+    var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var err = document.getElementById('email-error');
+
+    if (!fn || !em || !ind || !emailRe.test(em)) {
+      var form = document.getElementById('hsp-apply-form');
+      form.classList.remove('shake');
+      void form.offsetWidth;
+      form.classList.add('shake');
+      setTimeout(function() { form.classList.remove('shake'); }, 400);
+      if (em && !emailRe.test(em)) {
+        err.textContent = 'Please enter a valid email address.';
+        err.style.display = 'block';
+      }
+      return;
+    }
+
+    err.textContent = '';
+    err.style.display = 'none';
+
+    var step2 = document.getElementById('step2');
+    step2.classList.add('open');
+    setTimeout(function() {
+      step2.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  });
+
+  // Step 2 — final submit
+  document.getElementById('hsp-apply-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    var btn = this.querySelector('button[type="submit"]');
+    var status = document.getElementById('form-status');
+
+    var lastName = document.getElementById('s2_last_name').value.trim();
+    var phone = document.getElementById('s2_phone').value.replace(/\D/g, '');
+
+    if (!lastName || !phone) {
+      var form = document.getElementById('hsp-apply-form');
+      form.classList.remove('shake');
+      void form.offsetWidth;
+      form.classList.add('shake');
+      setTimeout(function() { form.classList.remove('shake'); }, 400);
+      return;
+    }
+
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    status.style.display = 'none';
+
+    var firstName = document.getElementById('s1_first_name').value.trim();
+    var email = document.getElementById('s1_email').value.trim();
+    var industry = document.getElementById('s1_industry').value.trim();
+
+    var data = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      phone: phone,
+      companyName: document.getElementById('s2_business_name').value.trim() || '',
+      website: document.getElementById('s2_website').value.trim() || '',
+      industry: industry,
+      message: document.getElementById('s2_message').value.trim() || ''
+    };
+
+    try {
+      var res = await fetch('https://hsp-forms.harley-b13.workers.dev/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      var result = await res.json();
+      if (result.success) {
+        fields.forEach(function(k) { localStorage.removeItem(LS + k); });
+        var params = new URLSearchParams({ fn: firstName, ln: lastName, em: email, ph: phone });
+        window.location.href = '/demo.html?' + params.toString();
+      } else {
+        throw new Error('failed');
+      }
+    } catch(err) {
+      status.textContent = 'Something went wrong — email us at harley@hspsystems.io';
+      status.style.cssText = 'display:block;color:#ff6b6b;font-size:14px;margin-top:12px;font-family:inherit;';
+      btn.textContent = 'Get My Free Audit →';
+      btn.disabled = false;
+    }
+  });
+})();
 </script>
 </body>
 </html>
