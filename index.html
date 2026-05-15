@@ -331,6 +331,9 @@ document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
   var LS = 'hsp_';
   var textFields = ['s1_first_name','s1_email','s2_last_name','s2_phone','s2_business_name','s2_website','s2_message'];
   var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  var step1FirstName = '';
+  var step1Email = '';
+  var step1Industry = '';
 
   // ── Custom industry dropdown ──────────────────────────────────────
   var industryOptions = [
@@ -548,6 +551,10 @@ document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
     err.textContent = '';
     err.style.display = 'none';
 
+    step1FirstName = fn;
+    step1Email     = em;
+    step1Industry  = ind;
+
     // Fire-and-forget partial lead capture
     fetch('https://hsp-forms.harley-b13.workers.dev/submit', {
       method: 'POST',
@@ -580,40 +587,51 @@ document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
       return;
     }
 
+    // Guard: step 1 values must be present
+    if (!step1FirstName || !step1Email) {
+      status.textContent = 'Something went wrong — please refresh and try again.';
+      status.style.cssText = 'display:block;color:#ff6b6b;font-size:14px;margin-top:12px;font-family:inherit;';
+      return;
+    }
+
     btn.textContent = 'Sending...';
     btn.disabled = true;
     status.style.display = 'none';
 
-    var firstName = document.getElementById('s1_first_name').value.trim();
-    var email     = document.getElementById('s1_email').value.trim();
-    var industry  = document.getElementById('s1_industry').value.trim();
-
-    var data = {
-      firstName:   firstName,
+    var payload = {
+      firstName:   step1FirstName,
       lastName:    lastName,
-      email:       email,
+      email:       step1Email,
       phone:       phone,
-      companyName: document.getElementById('s2_business_name').value.trim() || '',
-      website:     document.getElementById('s2_website').value.trim() || '',
-      industry:    industry,
-      message:     document.getElementById('s2_message').value.trim() || ''
+      companyName: document.getElementById('s2_business_name').value.trim(),
+      website:     document.getElementById('s2_website').value.trim(),
+      industry:    step1Industry,
+      message:     document.getElementById('s2_message').value.trim()
     };
+
+    console.log('Step 2 payload:', JSON.stringify(payload));
 
     try {
       var res    = await fetch('https://hsp-forms.harley-b13.workers.dev/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+        body: JSON.stringify(payload)
       });
       var result = await res.json();
       if (result.success) {
         textFields.concat(['s1_industry']).forEach(function(k) { localStorage.removeItem(LS + k); });
-        var params = new URLSearchParams({ fn: firstName, ln: lastName, em: email, ph: phone });
-        window.location.href = '/demo.html?' + params.toString();
+        var qs = new URLSearchParams({
+          fn: payload.firstName,
+          ln: payload.lastName,
+          em: payload.email,
+          ph: payload.phone
+        }).toString();
+        window.location.href = '/demo.html?' + qs;
       } else {
-        throw new Error('failed');
+        throw new Error('Server returned success:false');
       }
     } catch(err) {
+      console.log('Fetch error:', err);
       status.textContent = 'Something went wrong — email us at harley@hspsystems.io';
       status.style.cssText = 'display:block;color:#ff6b6b;font-size:14px;margin-top:12px;font-family:inherit;';
       btn.textContent = 'Get My Free Audit →';
