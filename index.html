@@ -101,6 +101,14 @@
 .steps-track{display:flex;width:200%;transition:transform 0.4s ease;align-items:flex-start}
 .steps-slide{width:50%;box-sizing:border-box}
 .step2-top{padding-top:20px;border-top:1px solid rgba(255,255,255,0.08)}
+.cust-sel-trigger{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.35);padding:14px 16px;font-size:15px;font-family:inherit;cursor:pointer;text-align:left;display:flex;justify-content:space-between;align-items:center;box-sizing:border-box;transition:border-color 0.2s}
+.cust-sel-trigger.has-value{color:#fff}
+.cust-sel-trigger:hover,.cust-sel-trigger.open{border-color:rgba(255,255,255,0.35)}
+.cust-sel-arrow{border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid rgba(255,255,255,0.4);flex-shrink:0;transition:transform 0.2s}
+.cust-sel-trigger.open .cust-sel-arrow{transform:rotate(180deg)}
+#hsp-industry-list{position:fixed;background:#1C2E5C;border:1px solid rgba(255,255,255,0.15);z-index:99999;overflow-y:auto;box-shadow:0 8px 32px rgba(0,0,0,0.5)}
+#hsp-industry-list .cust-opt{padding:11px 16px;font-size:14px;color:rgba(255,255,255,0.7);cursor:pointer;font-family:'DM Sans',sans-serif}
+#hsp-industry-list .cust-opt:hover,#hsp-industry-list .cust-opt.selected{background:#C8912A;color:#fff}
 @keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-6px)}80%{transform:translateX(6px)}}
 .shake{animation:shake 0.4s ease}
 @media(max-width:1000px){
@@ -167,30 +175,11 @@
               <div id="email-error" class="field-error"></div>
             </div>
             <div class="form-field">
-              <select id="s1_industry" name="industry" class="form-input" autocomplete="off">
-                <option value="" disabled selected>Select your industry</option>
-                <option>Landscaping / Outdoor Living</option>
-                <option>House Cleaning</option>
-                <option>Commercial Cleaning</option>
-                <option>Painting</option>
-                <option>Roofing</option>
-                <option>HVAC / Plumbing / Electrical</option>
-                <option>Remodeling / Construction</option>
-                <option>Tree Service</option>
-                <option>Pressure Washing</option>
-                <option>Junk Removal</option>
-                <option>Sign Company / Signage</option>
-                <option>Medical Office</option>
-                <option>Dental Office</option>
-                <option>Eye Care / Optometry</option>
-                <option>Chiropractic / Physical Therapy</option>
-                <option>Veterinary</option>
-                <option>Salon / Spa / Beauty</option>
-                <option>Auto Repair / Detailing</option>
-                <option>Property Management</option>
-                <option>Other Home Service</option>
-                <option>Other Business</option>
-              </select>
+              <button type="button" id="industry-trigger" class="cust-sel-trigger" aria-haspopup="listbox" aria-expanded="false">
+                <span id="industry-label">Select your industry</span>
+                <span class="cust-sel-arrow"></span>
+              </button>
+              <input type="hidden" id="s1_industry" name="industry">
             </div>
             <button type="button" id="step1-btn" class="btn-gold" style="width:100%;text-align:center;padding:18px;">Show Me Where I'm Losing Leads →</button>
           </div>
@@ -335,8 +324,84 @@ document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
 <script>
 (function() {
   var LS = 'hsp_';
-  var fields = ['s1_first_name','s1_email','s1_industry','s2_last_name','s2_phone','s2_business_name','s2_website','s2_message'];
+  var textFields = ['s1_first_name','s1_email','s2_last_name','s2_phone','s2_business_name','s2_website','s2_message'];
   var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  // ── Custom industry dropdown ──────────────────────────────────────
+  var industryOptions = [
+    'Landscaping / Outdoor Living','House Cleaning','Commercial Cleaning',
+    'Painting','Roofing','HVAC / Plumbing / Electrical','Remodeling / Construction',
+    'Tree Service','Pressure Washing','Junk Removal','Sign Company / Signage',
+    'Medical Office','Dental Office','Eye Care / Optometry',
+    'Chiropractic / Physical Therapy','Veterinary','Salon / Spa / Beauty',
+    'Auto Repair / Detailing','Property Management','Other Home Service','Other Business'
+  ];
+
+  var industryList = document.createElement('div');
+  industryList.id = 'hsp-industry-list';
+  industryList.style.display = 'none';
+  industryOptions.forEach(function(opt) {
+    var item = document.createElement('div');
+    item.className = 'cust-opt';
+    item.textContent = opt;
+    item.addEventListener('mousedown', function(e) {
+      e.preventDefault();
+      selectIndustry(opt);
+    });
+    industryList.appendChild(item);
+  });
+  document.body.appendChild(industryList);
+
+  var trigger  = document.getElementById('industry-trigger');
+  var hiddenInd = document.getElementById('s1_industry');
+  var indLabel  = document.getElementById('industry-label');
+
+  function selectIndustry(val) {
+    hiddenInd.value = val;
+    indLabel.textContent = val;
+    trigger.classList.add('has-value');
+    trigger.setAttribute('aria-expanded', 'false');
+    localStorage.setItem(LS + 's1_industry', val);
+    closeList();
+  }
+
+  function openList() {
+    var rect = trigger.getBoundingClientRect();
+    var maxH = Math.min(280, window.innerHeight - rect.bottom - 8);
+    industryList.style.width   = rect.width + 'px';
+    industryList.style.left    = rect.left + 'px';
+    industryList.style.top     = rect.bottom + 'px';
+    industryList.style.maxHeight = maxH + 'px';
+    industryList.style.display = 'block';
+    trigger.classList.add('open');
+    trigger.setAttribute('aria-expanded', 'true');
+    Array.from(industryList.children).forEach(function(item) {
+      item.classList.toggle('selected', item.textContent === hiddenInd.value);
+    });
+  }
+
+  function closeList() {
+    industryList.style.display = 'none';
+    trigger.classList.remove('open');
+    trigger.setAttribute('aria-expanded', 'false');
+  }
+
+  trigger.addEventListener('click', function() {
+    trigger.classList.contains('open') ? closeList() : openList();
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!trigger.contains(e.target) && !industryList.contains(e.target)) closeList();
+  });
+
+  window.addEventListener('scroll', function() {
+    if (trigger.classList.contains('open')) openList();
+  }, true);
+
+  window.addEventListener('resize', function() {
+    if (trigger.classList.contains('open')) openList();
+  });
+  // ── End custom dropdown ───────────────────────────────────────────
 
   function slideToStep2(instant) {
     var outer = document.getElementById('steps-outer');
@@ -346,7 +411,7 @@ document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
       track.style.transition = 'none';
       outer.style.transition = 'none';
     }
-    outer.style.height = step2.offsetHeight + 'px';
+    outer.style.height = step2.scrollHeight + 'px';
     track.style.transform = 'translateX(-50%)';
     if (instant) {
       requestAnimationFrame(function() {
@@ -358,28 +423,33 @@ document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
     }
   }
 
-  // Restore saved values on load, then size the outer container
-  fields.forEach(function(id) {
-    var el = document.getElementById(id);
+  // Restore saved text field values
+  textFields.forEach(function(id) {
+    var el  = document.getElementById(id);
     var val = localStorage.getItem(LS + id);
     if (el && val) el.value = val;
   });
 
+  // Restore industry selection
+  var savedInd = localStorage.getItem(LS + 's1_industry');
+  if (savedInd) selectIndustry(savedInd);
+
+  // Size outer container (after restore so content height is accurate)
   requestAnimationFrame(function() {
     var outer = document.getElementById('steps-outer');
     var step1 = document.getElementById('step1');
     if (localStorage.getItem(LS + 's2_last_name') || localStorage.getItem(LS + 's2_phone')) {
       slideToStep2(true);
     } else {
-      outer.style.height = step1.offsetHeight + 'px';
+      outer.style.height = step1.scrollHeight + 'px';
     }
   });
 
-  // Save on input/change
-  fields.forEach(function(id) {
+  // Save text fields on input/change
+  textFields.forEach(function(id) {
     var el = document.getElementById(id);
     if (!el) return;
-    el.addEventListener('input', function() { localStorage.setItem(LS + id, this.value); });
+    el.addEventListener('input',  function() { localStorage.setItem(LS + id, this.value); });
     el.addEventListener('change', function() { localStorage.setItem(LS + id, this.value); });
   });
 
@@ -414,7 +484,7 @@ document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
   document.getElementById('step1-btn').addEventListener('click', function() {
     var fn  = document.getElementById('s1_first_name').value.trim();
     var em  = document.getElementById('s1_email').value.trim();
-    var ind = document.getElementById('s1_industry').value;
+    var ind = hiddenInd.value;
     var err = document.getElementById('email-error');
 
     if (!fn || !em || !ind || !emailRe.test(em)) {
@@ -438,13 +508,8 @@ document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        firstName: fn,
-        email: em,
-        industry: ind,
-        lastName: '',
-        phone: '',
-        companyName: '',
-        website: '',
+        firstName: fn, email: em, industry: ind,
+        lastName: '', phone: '', companyName: '', website: '',
         message: 'PARTIAL — Step 1 only'
       }),
       keepalive: true
@@ -497,7 +562,7 @@ document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
       });
       var result = await res.json();
       if (result.success) {
-        fields.forEach(function(k) { localStorage.removeItem(LS + k); });
+        textFields.concat(['s1_industry']).forEach(function(k) { localStorage.removeItem(LS + k); });
         var params = new URLSearchParams({ fn: firstName, ln: lastName, em: email, ph: phone });
         window.location.href = '/demo.html?' + params.toString();
       } else {
