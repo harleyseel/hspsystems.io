@@ -255,16 +255,17 @@
       <!-- PASTE GHL EMBED CODE HERE -->
       
       <!-- DELETE BELOW ONCE GHL FORM IS EMBEDDED -->
-      <div class="apply-form">
-        <div class="apply-row"><div><label class="form-label">First Name</label><input type="text" placeholder="John" class="form-input"></div><div><label class="form-label">Last Name</label><input type="text" placeholder="Smith" class="form-input"></div></div>
-        <div><label class="form-label">Business Name</label><input type="text" placeholder="Your company" class="form-input"></div>
-        <div class="apply-row"><div><label class="form-label">Email</label><input type="email" placeholder="john@company.com" class="form-input"></div><div><label class="form-label">Phone</label><input type="tel" placeholder="(616) 555-0123" class="form-input"></div></div>
-        <div><label class="form-label">Website</label><input type="text" placeholder="yourcompany.com" class="form-input"></div>
-        <div><label class="form-label">Industry</label><select class="form-input"><option value="" disabled selected>Select your industry</option><option>Landscaping / Outdoor Living</option><option>House Cleaning</option><option>Commercial Cleaning</option><option>Painting</option><option>Roofing</option><option>HVAC / Plumbing / Electrical</option><option>Remodeling / Construction</option><option>Tree Service</option><option>Pressure Washing</option><option>Junk Removal</option><option>Other Home Service</option></select></div>
-        <div><label class="form-label">Biggest problem right now?</label><textarea rows="3" placeholder="Not enough of the right leads, too many price shoppers, crews sitting around..." class="form-input"></textarea></div>
-        <button type="button" class="btn-gold" style="width:100%;text-align:center;padding:18px;">Submit Application</button>
+      <form id="hsp-apply-form" class="apply-form">
+        <div class="apply-row"><div><label class="form-label">First Name</label><input id="first_name" type="text" placeholder="John" class="form-input"></div><div><label class="form-label">Last Name</label><input id="last_name" type="text" placeholder="Smith" class="form-input"></div></div>
+        <div><label class="form-label">Business Name</label><input id="business_name" type="text" placeholder="Your company" class="form-input"></div>
+        <div class="apply-row"><div><label class="form-label">Email</label><input id="email" type="email" placeholder="john@company.com" class="form-input"></div><div><label class="form-label">Phone</label><input id="phone" type="tel" placeholder="(616) 555-0123" class="form-input"></div></div>
+        <div><label class="form-label">Website</label><input id="website" type="text" placeholder="yourcompany.com" class="form-input"></div>
+        <div><label class="form-label">Industry</label><select id="industry" class="form-input"><option value="" disabled selected>Select your industry</option><option>Landscaping / Outdoor Living</option><option>House Cleaning</option><option>Commercial Cleaning</option><option>Painting</option><option>Roofing</option><option>HVAC / Plumbing / Electrical</option><option>Remodeling / Construction</option><option>Tree Service</option><option>Pressure Washing</option><option>Junk Removal</option><option>Other Home Service</option></select></div>
+        <div><label class="form-label">Biggest problem right now?</label><textarea id="message" rows="3" placeholder="Not enough of the right leads, too many price shoppers, crews sitting around..." class="form-input"></textarea></div>
+        <button type="submit" class="btn-gold" style="width:100%;text-align:center;padding:18px;">Submit Application</button>
+        <div id="form-status" style="display:none"></div>
         <p style="font-size:12px;color:rgba(255,255,255,0.2);text-align:center;">We respond within 24 hours. No sales pitch — we review your setup first.</p>
-      </div>
+      </form>
       <!-- END TEMPORARY FORM -->
     </div>
   </div>
@@ -288,6 +289,46 @@
 <script>
 const io=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:0.08});
 document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
+</script>
+<script>
+document.getElementById('hsp-apply-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('button[type="submit"]');
+  const status = document.getElementById('form-status');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  status.style.display = 'none';
+  const data = {
+    firstName: document.getElementById('first_name')?.value?.trim() || '',
+    lastName: document.getElementById('last_name')?.value?.trim() || '',
+    email: document.getElementById('email')?.value?.trim() || '',
+    phone: document.getElementById('phone')?.value?.trim() || '',
+    companyName: document.getElementById('business_name')?.value?.trim() || '',
+    website: document.getElementById('website')?.value?.trim() || '',
+    industry: document.getElementById('industry')?.value?.trim() || '',
+    message: document.getElementById('message')?.value?.trim() || ''
+  };
+  try {
+    const res = await fetch('https://hsp-forms.harley-b13.workers.dev/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    const result = await res.json();
+    if (result.success) {
+      status.textContent = "Thanks — we'll review your setup and reach out within 24 hours.";
+      status.style.cssText = 'display:block;color:#C8912A;font-size:14px;margin-top:12px;font-family:inherit;';
+      this.reset();
+    } else {
+      throw new Error('failed');
+    }
+  } catch(err) {
+    status.textContent = 'Something went wrong — email us at harley@hspsystems.io';
+    status.style.cssText = 'display:block;color:#ff6b6b;font-size:14px;margin-top:12px;font-family:inherit;';
+  }
+  btn.textContent = 'Submit Application';
+  btn.disabled = false;
+});
 </script>
 </body>
 </html>
