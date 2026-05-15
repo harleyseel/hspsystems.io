@@ -157,14 +157,14 @@
     <form id="hsp-apply-form" class="twostep-form" novalidate>
       <div id="step1">
         <div class="form-field">
-          <input id="s1_first_name" type="text" placeholder="First name" class="form-input" autocomplete="given-name">
+          <input id="s1_first_name" name="first_name" type="text" placeholder="First name" class="form-input" autocomplete="given-name">
         </div>
         <div class="form-field">
-          <input id="s1_email" type="email" placeholder="Work email" class="form-input" autocomplete="email">
+          <input id="s1_email" name="email" type="email" placeholder="Work email" class="form-input" autocomplete="email">
           <div id="email-error" class="field-error"></div>
         </div>
         <div class="form-field">
-          <select id="s1_industry" class="form-input" autocomplete="off">
+          <select id="s1_industry" name="industry" class="form-input" autocomplete="off">
             <option value="" disabled selected>Select your industry</option>
             <option>Landscaping / Outdoor Living</option>
             <option>House Cleaning</option>
@@ -194,19 +194,19 @@
       <div id="step2" class="step2-wrap">
         <div class="step2-inner">
           <div class="form-field">
-            <input id="s2_last_name" type="text" placeholder="Last name" class="form-input" autocomplete="family-name">
+            <input id="s2_last_name" name="last_name" type="text" placeholder="Last name" class="form-input" autocomplete="family-name">
           </div>
           <div class="form-field">
-            <input id="s2_phone" type="tel" placeholder="(616) 555-0123" class="form-input" autocomplete="tel">
+            <input id="s2_phone" name="phone" type="tel" placeholder="(616) 555-0123" class="form-input" autocomplete="tel">
           </div>
           <div class="form-field">
-            <input id="s2_business_name" type="text" placeholder="Business name" class="form-input" autocomplete="organization">
+            <input id="s2_business_name" name="company" type="text" placeholder="Business name" class="form-input" autocomplete="organization">
           </div>
           <div class="form-field">
-            <input id="s2_website" type="text" placeholder="yourcompany.com" class="form-input" autocomplete="url">
+            <input id="s2_website" name="website" type="text" placeholder="yourcompany.com" class="form-input" autocomplete="url">
           </div>
           <div class="form-field">
-            <textarea id="s2_message" rows="3" placeholder="Biggest problem right now?" class="form-input" autocomplete="off"></textarea>
+            <textarea id="s2_message" name="message" rows="3" placeholder="Biggest problem right now?" class="form-input" autocomplete="off"></textarea>
           </div>
           <button type="submit" class="btn-gold" style="width:100%;text-align:center;padding:18px;">Get My Free Audit →</button>
           <div id="form-status" style="display:none;"></div>
