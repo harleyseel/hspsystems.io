@@ -102,7 +102,7 @@
 
 <div class="booked-cta">
   <p>Know someone else who could use this?</p>
-  <a href="https://hspsystems.io">Share the audit →</a>
+  <button id="share-btn" onclick="(function(btn){var shareData={title:'Free Lead Audit — HSP Systems',text:'Found this — they review your lead setup for free and show you what to automate. Worth 60 seconds:',url:'https://hspsystems.io'};if(navigator.share){navigator.share(shareData);}else{navigator.clipboard.writeText('https://hspsystems.io').then(function(){btn.textContent='Link copied! ✓';setTimeout(function(){btn.textContent='Share the audit →';},2000);});}})(this)" style="background:none;border:none;padding:0;cursor:pointer;color:#C8912A;font-size:15px;font-weight:500;font-family:inherit;">Share the audit →</button>
 </div>
 
 <footer>
