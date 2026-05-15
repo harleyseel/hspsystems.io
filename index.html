@@ -302,7 +302,7 @@ document.getElementById('hsp-apply-form').addEventListener('submit', async funct
     firstName: document.getElementById('first_name')?.value?.trim() || '',
     lastName: document.getElementById('last_name')?.value?.trim() || '',
     email: document.getElementById('email')?.value?.trim() || '',
-    phone: document.getElementById('phone')?.value?.trim() || '',
+    phone: document.getElementById('phone')?.value?.replace(/\D/g,'') || '',
     companyName: document.getElementById('business_name')?.value?.trim() || '',
     website: document.getElementById('website')?.value?.trim() || '',
     industry: document.getElementById('industry')?.value?.trim() || '',
@@ -328,6 +328,31 @@ document.getElementById('hsp-apply-form').addEventListener('submit', async funct
   }
   btn.textContent = 'Submit Application';
   btn.disabled = false;
+});
+
+document.getElementById('phone').addEventListener('input', function() {
+  let val = this.value.replace(/\D/g, '').substring(0, 10);
+  if(val.length >= 7) {
+    val = '(' + val.substring(0,3) + ') ' + val.substring(3,6) + '-' + val.substring(6);
+  } else if(val.length >= 4) {
+    val = '(' + val.substring(0,3) + ') ' + val.substring(3);
+  } else if(val.length > 0) {
+    val = '(' + val;
+  }
+  this.value = val;
+});
+
+document.getElementById('email').addEventListener('blur', function() {
+  const val = this.value.trim();
+  let err = document.getElementById('email-error');
+  if(!err) {
+    err = document.createElement('div');
+    err.id = 'email-error';
+    err.style.cssText = 'color:#ff6b6b;font-size:12px;margin-top:4px;';
+    this.parentNode.appendChild(err);
+  }
+  const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+  err.textContent = val && !valid ? 'Please enter a valid email address.' : '';
 });
 </script>
 </body>
