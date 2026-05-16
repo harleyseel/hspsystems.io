@@ -334,6 +334,7 @@ document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
   var step1FirstName = '';
   var step1Email = '';
   var step1Industry = '';
+  window.hspStep1 = { firstName: '', email: '', industry: '' };
 
   // ── Custom industry dropdown ──────────────────────────────────────
   var industryOptions = [
@@ -554,6 +555,12 @@ document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
     step1FirstName = fn;
     step1Email     = em;
     step1Industry  = ind;
+    window.hspStep1.firstName = fn;
+    window.hspStep1.email     = em;
+    window.hspStep1.industry  = ind;
+    sessionStorage.setItem('hsp_s1_fn',  fn);
+    sessionStorage.setItem('hsp_s1_em',  em);
+    sessionStorage.setItem('hsp_s1_ind', ind);
 
     // Fire-and-forget partial lead capture
     fetch('https://hsp-forms.harley-b13.workers.dev/submit', {
@@ -595,9 +602,9 @@ document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
       if (matchedInd) selectIndustry(matchedInd);
     }
 
-    if (pFn) step1FirstName = pFn;
-    if (pEm) step1Email = pEm;
-    if (matchedInd) step1Industry = matchedInd;
+    if (pFn) { step1FirstName = pFn; window.hspStep1.firstName = pFn; sessionStorage.setItem('hsp_s1_fn', pFn); }
+    if (pEm) { step1Email = pEm;     window.hspStep1.email     = pEm; sessionStorage.setItem('hsp_s1_em', pEm); }
+    if (matchedInd) { step1Industry = matchedInd; window.hspStep1.industry = matchedInd; sessionStorage.setItem('hsp_s1_ind', matchedInd); }
 
     fetch('https://hsp-forms.harley-b13.workers.dev/submit', {
       method: 'POST',
@@ -636,9 +643,21 @@ document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
       return;
     }
 
-    // Guard: step 1 values must be present
-    if (!step1FirstName || !step1Email) {
-      status.textContent = 'Something went wrong — please refresh and try again.';
+    var payload = {
+      firstName:   window.hspStep1.firstName || step1FirstName || sessionStorage.getItem('hsp_s1_fn') || '',
+      lastName:    lastName,
+      email:       window.hspStep1.email     || step1Email     || sessionStorage.getItem('hsp_s1_em') || '',
+      phone:       phone,
+      companyName: document.getElementById('s2_business_name').value.trim(),
+      website:     document.getElementById('s2_website').value.trim(),
+      industry:    window.hspStep1.industry  || step1Industry  || sessionStorage.getItem('hsp_s1_ind') || '',
+      message:     document.getElementById('s2_message').value.trim()
+    };
+
+    console.log('FULL PAYLOAD:', JSON.stringify(payload));
+
+    if (!payload.firstName || !payload.email) {
+      status.textContent = 'Session expired — please refresh and try again.';
       status.style.cssText = 'display:block;color:#ff6b6b;font-size:14px;margin-top:12px;font-family:inherit;';
       return;
     }
@@ -646,19 +665,6 @@ document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
     btn.textContent = 'Sending...';
     btn.disabled = true;
     status.style.display = 'none';
-
-    var payload = {
-      firstName:   step1FirstName,
-      lastName:    lastName,
-      email:       step1Email,
-      phone:       phone,
-      companyName: document.getElementById('s2_business_name').value.trim(),
-      website:     document.getElementById('s2_website').value.trim(),
-      industry:    step1Industry,
-      message:     document.getElementById('s2_message').value.trim()
-    };
-
-    console.log('Step 2 payload:', JSON.stringify(payload));
 
     try {
       var res    = await fetch('https://hsp-forms.harley-b13.workers.dev/submit', {
