@@ -63,7 +63,6 @@ export default {
       const isPartial = body.message === 'PARTIAL — Step 1 only';
       const tags = [
         industryTag,
-        'website-lead',
         isPartial ? 'website-lead-partial' : 'website-lead-complete'
       ];
 
@@ -104,6 +103,25 @@ export default {
       }
 
       if (ghlRes.status === 200 || ghlRes.status === 201) {
+        if (!isPartial) {
+          try {
+            const ghlData = await ghlRes.json();
+            const contactId = ghlData.contact?.id || ghlData.id;
+            if (contactId) {
+              await fetch(`https://services.leadconnectorhq.com/contacts/${contactId}/tags`, {
+                method: "DELETE",
+                headers: {
+                  Authorization: `Bearer ${env.GHL_API_KEY}`,
+                  Version: "2021-07-28",
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ tags: ["website-lead-partial"] }),
+              });
+            }
+          } catch (tagErr) {
+            console.error("Partial tag delete failed:", tagErr);
+          }
+        }
         return new Response(
           JSON.stringify({ success: true }),
           { status: 200, headers: { "Content-Type": "application/json", ...corsHeaders(origin) } }
@@ -140,6 +158,21 @@ export default {
             });
             const updateBody = await updateRes.text().catch(() => "");
             console.log("GHL update status:", updateRes.status, updateBody);
+            if (!isPartial) {
+              try {
+                await fetch(`https://services.leadconnectorhq.com/contacts/${contactId}/tags`, {
+                  method: "DELETE",
+                  headers: {
+                    Authorization: `Bearer ${env.GHL_API_KEY}`,
+                    Version: "2021-07-28",
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({ tags: ["website-lead-partial"] }),
+                });
+              } catch (tagErr) {
+                console.error("Partial tag delete failed:", tagErr);
+              }
+            }
           } else {
             console.error("Duplicate but no contactId in error:", errText);
           }
