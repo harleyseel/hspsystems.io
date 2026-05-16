@@ -570,6 +570,55 @@ document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
     slideToStep2(false);
   });
 
+  // URL param pre-fill and auto-advance
+  document.addEventListener('DOMContentLoaded', function() {
+    var params = new URLSearchParams(window.location.search);
+    var pStep = params.get('step');
+    var pFn   = params.get('fn');
+    var pEm   = params.get('em');
+    var pInd  = params.get('ind');
+
+    if (!pFn && !pEm && !pInd) return;
+
+    if (pFn) document.getElementById('s1_first_name').value = pFn;
+    if (pEm) document.getElementById('s1_email').value = pEm;
+
+    var matchedInd = '';
+    if (pInd) {
+      var pIndLower = pInd.toLowerCase();
+      for (var i = 0; i < industryOptions.length; i++) {
+        if (industryOptions[i].toLowerCase() === pIndLower) {
+          matchedInd = industryOptions[i];
+          break;
+        }
+      }
+      if (matchedInd) selectIndustry(matchedInd);
+    }
+
+    if (pFn) step1FirstName = pFn;
+    if (pEm) step1Email = pEm;
+    if (matchedInd) step1Industry = matchedInd;
+
+    fetch('https://hsp-forms.harley-b13.workers.dev/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        firstName: pFn || '', lastName: '', email: pEm || '',
+        industry: matchedInd, phone: '', companyName: '', website: '',
+        message: 'PARTIAL — Step 1 only'
+      }),
+      keepalive: true
+    });
+
+    if (pStep === '2') {
+      setTimeout(function() {
+        slideToStep2(false);
+        var formSection = document.getElementById('apply');
+        if (formSection) formSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 300);
+    }
+  });
+
   // Step 2 — final submit
   document.getElementById('hsp-apply-form').addEventListener('submit', async function(e) {
     e.preventDefault();
